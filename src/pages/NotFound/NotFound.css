@@ -1,0 +1,6 @@
+.notFound {
+  background-image: url("../../assets/images/vegetables.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+}

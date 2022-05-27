@@ -1,0 +1,12 @@
+.navigationBar-wrapper .navbar {
+  height: 90px;
+}
+
+.navigationBar-wrapper .bg-light {
+  background-color: #fff !important;
+}
+
+.navigationBar-wrapper .navbar-light .navbar-nav .nav-link {
+  color: var(--textBlack) !important;
+  text-transform: uppercase !important;
+}
