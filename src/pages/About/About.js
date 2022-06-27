@@ -6,7 +6,9 @@ function About() {
   return (
     <>
       <ContainerLayout>
-        <main>About Page</main>
+        <div className="main-content">
+          <h1>About</h1>
+        </div>
       </ContainerLayout>
     </>
   );

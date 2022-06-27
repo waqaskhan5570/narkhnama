@@ -1,0 +1,42 @@
+.portal-wrapper {
+  max-width: 100%;
+}
+
+.portal-sections .row {
+  width: 100%;
+}
+
+.portal-sections .portal-left {
+  background-color: #fff;
+}
+
+.portal-left .main-section {
+  width: 80%;
+  margin: auto;
+}
+
+.portal-left .main-section .logo-image {
+  width: 200px;
+  height: 200px;
+}
+
+.main-section .logo-image img {
+  width: 100%;
+  height: 100%;
+}
+
+.buttons-wrappers {
+  margin-left: 1rem;
+}
+
+.portal-sections .portal-right {
+  background: url("../../assets/images/fort.jpg");
+  height: 100vh;
+  background-size: cover;
+}
+
+@media all and (max-width: 991px) {
+  .portal-sections .portal-right {
+    display: none;
+  }
+}

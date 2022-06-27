@@ -1,0 +1,25 @@
+.footer {
+  width: 100%;
+  min-height: 150px;
+  background-color: black;
+  opacity: 0.8;
+  color: #fff;
+}
+
+.footer .footer-wrapper {
+  width: 90%;
+  margin: auto;
+  padding-top: 1rem;
+}
+
+.footer .footer-wrapper .footer-links p .links {
+  color: #fff;
+  text-decoration: none;
+  text-transform: capitalize;
+  font-size: 14px;
+  margin-bottom: 0px;
+}
+
+.footer .footer-wrapper .footer-links p .links:hover {
+  border-bottom: 1px solid #fff;
+}

@@ -1,0 +1,266 @@
+{
+	"register": {
+		"method": "POST",
+		"route": "/auth/register"
+	},
+	"login": {
+		"method": "POST",
+		"route": "/auth/login"
+	},
+	"socialLogin": {
+		"method": "POST",
+		"route": "/auth/social"
+	},
+	"checkEmailExistance": {
+		"method": "GET",
+		"route": "/auth/check-email-existence"
+	},
+	"updateProfile": {
+		"method": "PUT",
+		"route": "/users"
+	},
+	"getUser": {
+		"method": "GET",
+		"route": "/users"
+	},
+	"changeUserStatus": {
+		"method": "PUT",
+		"route": "/admin/user/status"
+	},
+	"changeCauseStatus": {
+		"method": "PUT",
+		"route": "/admin/cause/status"
+	},
+	"updatePassword": {
+		"method": "PUT",
+		"route": "/users/password"
+	},
+	"getCharity": {
+		"method": "GET",
+		"route": "/charities"
+	},
+	"getDonationsForCharity": {
+		"method": "GET",
+		"route": "/charities/donations"
+	},
+	"createCharity": {
+		"method": "POST",
+		"route": "/charities"
+	},
+	"editCharity": {
+		"method": "PUT",
+		"route": "/charities"
+	},
+	"createEnterprise": {
+		"method": "POST",
+		"route": "/enterprise"
+	},
+	"getEnterprise": {
+		"method": "GET",
+		"route": "/enterprises"
+	},
+	"editEnterprise": {
+		"method": "PUT",
+		"route": "/enterprise"
+	},
+	"deleteEnterprise": {
+		"method": "DELETE",
+		"route": "/enterprise"
+	},
+	"createReward": {
+		"method": "POST",
+		"route": "/reward"
+	},
+	"getRewards": {
+		"method": "GET",
+		"route": "/rewards"
+	},
+	"editReward": {
+		"method": "PUT",
+		"route": "/reward"
+	},
+	"deleteReward": {
+		"method": "DELETE",
+		"route": "/reward"
+	},
+	"purchaseReward": {
+		"method": "POST",
+		"route": "/purchasedrewards"
+	},
+	"getCategories": {
+		"method": "GET",
+		"route": "/category"
+	},
+	"donateToCharity": {
+		"method": "POST",
+		"route": "/donations"
+	},
+	"getMyDonations": {
+		"method": "GET",
+		"route": "/donations"
+	},
+	"getMyRewards": {
+		"method": "GET",
+		"route": "/purchasedrewards"
+	},
+	"resetPasswordRequest": {
+		"method": "POST",
+		"route": "/auth/password/forgot"
+	},
+	"resetPassword": {
+		"method": "POST",
+		"route": "/auth/password/reset"
+	},
+	"stripePayment": {
+		"method": "POST",
+		"route": "/stripe/charge"
+	},
+	"paypalPayment": {
+		"method": "POST",
+		"route": "/paypal/charge"
+	},
+	"createCampaignUpdate": {
+		"method": "POST",
+		"route": "/campaign/update"
+	},
+	"getCampaignUpdates": {
+		"method": "GET",
+		"route": "/campaign/updates"
+	},
+	"updateCampaignStatus": {
+		"method": "PUT",
+		"route": "/campaign/update/status"
+	},
+	"createCampaignComment": {
+		"method": "POST",
+		"route": "/campaign/comment"
+	},
+	"getCampaignComments": {
+		"method": "GET",
+		"route": "/campaign/comments"
+	},
+	"updateComment": {
+		"method": "PUT",
+		"route": "/campaign/comment"
+	},
+	"varifyEmail": {
+		"method": "POST",
+		"route": "/auth/email/verify"
+	},
+	"resendVarificationEmail": {
+		"method": "POST",
+		"route": "/auth/email/resend"
+	},
+	"getUserCard": {
+		"method": "GET",
+		"route": "/users/card"
+	},
+	"addReport": {
+		"method": "POST",
+		"route": "/report"
+	},
+	"getReport": {
+		"method": "GET",
+		"route": "/reports"
+	},
+	"fetchUserConversations": {
+		"method": "GET",
+		"route": "/conversations"
+	},
+	"fetchAllConversations": {
+		"method": "GET",
+		"route": "/conversations/all"
+	},
+	"getChat": {
+		"method": "GET",
+		"route": "/chats"
+	},
+	"postChat": {
+		"method": "POST",
+		"route": "/chat"
+	},
+	"fetchSingleConversation": {
+		"method": "GET",
+		"route": "/conversations/user"
+	},
+	"blockConversation": {
+		"method": "PUT",
+		"route": "/conversation/block"
+	},
+	"unblockConversation": {
+		"method": "PUT",
+		"route": "/conversation/unblock"
+	},
+	"enterpriseRewardsItems": {
+		"method": "GET",
+		"route": "/items"
+	},
+	"addEnterpriseItem": {
+		"method": "POST",
+		"route": "/item"
+	},
+	"getUsersCoords": {
+		"method": "GET",
+		"route": "/map/users"
+	},
+	"getCausesCoords": {
+		"method": "GET",
+		"route": "/map/causes"
+	},
+	"getEnterprisesCoords": {
+		"method": "GET",
+		"route": "/map/enterprises"
+	},
+	"getAllUsers": {
+		"method": "GET",
+		"route": "/users/all"
+	},
+	"refundDonation": {
+		"method": "POST",
+		"route": "/donation/refund"
+	},
+	"getCharityCard": {
+		"method": "GET",
+		"route": "/charities/card"
+	},
+	"postContact": {
+		"method": "POST",
+		"route": "/contact"
+	},
+	"getContactUs": {
+		"method": "GET",
+		"route": "/contact"
+	},
+	"searchCampaignsByTitle": {
+		"method": "GET",
+		"route": "/search/title"
+	},
+	"postKycSupport": {
+		"method": "POST",
+		"route": "/kyc"
+	},
+	"getKycRequests": {
+		"method": "GET",
+		"route": "/kyc"
+	},
+	"kycStatusChange": {
+		"method": "PUT",
+		"route": "/kyc"
+	},
+	"getTransferRequest": {
+		"method": "GET",
+		"route": "/transfers"
+	},
+	"createTransferRequest": {
+		"method": "POST",
+		"route": "/transfer"
+	},
+	"approveTransferRequest": {
+		"method": "POST",
+		"route": "/transfer/approve"
+	},
+	"completeTransferRequest": {
+		"method": "POST",
+		"route": "/transfer/complete"
+	}
+}

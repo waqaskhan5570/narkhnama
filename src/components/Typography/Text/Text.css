@@ -1,0 +1,16 @@
+.main-text {
+  margin-top: 10px;
+  line-height: 25px;
+}
+
+.main-text.green {
+  color: #269443;
+}
+
+.main-text.red {
+  color: #cb1c23;
+}
+
+.main-text.center {
+  text-align: center;
+}

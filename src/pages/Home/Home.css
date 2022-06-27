@@ -1,0 +1,28 @@
+.hero-section {
+  background-image: url("../../assets/images/background.jpg");
+  height: 400px;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  padding: 20px;
+}
+
+.hero-section .hero-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.hero-content .hero-heading {
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.hero-content .narkhnamaImage {
+  width: 100px;
+  height: 200px;
+}
+
+.hero-content .narkhnamaImage img {
+  height: 100%;
+  width: 100%;
+}

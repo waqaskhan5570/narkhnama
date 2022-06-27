@@ -1,5 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Prompt:wght@700&display=swap");
 
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
   font-family: popins;
@@ -18,8 +27,8 @@
 
 :root {
   --textBlack: #000;
-  --mainGreen: #269443;
-  --white: #fff;
+  --primaryGreen: #269443;
+  --primaryRed: #cb1c23;
 }
 
 .App-header {
@@ -35,6 +44,11 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.main-content {
+  margin: 1rem auto;
+  width: 85%;
 }
 
 @keyframes App-logo-spin {
