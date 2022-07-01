@@ -1,0 +1,34 @@
+.auth-wrapper {
+  width: 100%;
+}
+
+.auth-sections .row {
+  margin: 0px 0px;
+}
+
+.portauthal-sections .auth-left {
+  background-color: #fff;
+}
+
+.auth-left .main-section {
+  width: 80%;
+  margin: auto;
+}
+
+.auth-sections .auth-login-right {
+  background: url("../../assets/images/fort.webp");
+  height: 100vh;
+  background-size: cover;
+}
+
+.auth-sections .auth-registration-right {
+  background: url("../../assets/images/mountains.webp");
+  background-size: cover;
+}
+
+@media all and (max-width: 991px) {
+  .auth-sections .auth-login-right,
+  .auth-sections .auth-registration-right {
+    display: none;
+  }
+}

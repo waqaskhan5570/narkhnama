@@ -1,6 +1,5 @@
 import React from "react";
 import IndexButton from "../../components/Buttons/IndexButton/IndexButton";
-import ContainerLayout from "../../components/Layouts/ContainerLayout/ContainerLayout";
 import "./NarkhnamaPortal.css";
 import NarkhnamaLogo from "../../assets/images/NarkhnamaLogo.png";
 import { Link } from "react-router-dom";

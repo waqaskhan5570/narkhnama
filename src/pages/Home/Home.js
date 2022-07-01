@@ -18,7 +18,7 @@ function Home() {
                   <img src={NarkhnamaLogo} alt="logo" height={130} />
                 </Title>
 
-                <Text>
+                <Text color="white">
                   A platform for finding prices of all the things across
                   Pakistan and keeping check and balance
                 </Text>

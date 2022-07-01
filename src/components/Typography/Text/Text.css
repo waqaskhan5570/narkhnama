@@ -11,6 +11,10 @@
   color: #cb1c23;
 }
 
+.main-text.white {
+  color: #fff;
+}
+
 .main-text.center {
   text-align: center;
 }

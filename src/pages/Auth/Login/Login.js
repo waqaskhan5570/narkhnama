@@ -1,45 +1,73 @@
-import React from "react";
+import React, { useState } from "react";
 import ContainerLayout from "../../../components/Layouts/ContainerLayout/ContainerLayout";
-import "./Login.css";
-import { Navigate } from "react-router-dom";
+import "../Auth.css";
+import { Navigate, Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { LOGIN_SUCCESS, LOGOUT_SUCCESS } from "../../../store/auth";
+import Title from "../../../components/Typography/Title/Title";
+import { LOGIN_SUCCESS } from "../../../store/auth";
+import AuthForm from "../../../components/Forms/Form";
+import formData from "../Login/login-data.json";
 
 function Login() {
-  let usernIfo = {
-    name: "Waqas",
-    email: "wa545@gm.com",
-    id: "!@123",
-  };
-  const { isAuthenticated, user } = useSelector((state) => state.auth);
+  const [loginData, setLoginData] = useState({
+    email_phone: "",
+    password: "",
+  });
+
+  const { isAuthenticated } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
 
   if (isAuthenticated) {
     return <Navigate to="/file-complaint" />;
   }
+
+  const inputChangeHandler = (event) => {
+    const { name, value } = event.target;
+    setLoginData((prevState) => {
+      return {
+        ...prevState,
+        [name]: value,
+      };
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(LOGIN_SUCCESS(loginData));
+  };
+
   return (
     <ContainerLayout>
-      <div className="main-content">
-        <h1>Log in</h1>
-        <p>Auth : {isAuthenticated ? "true" : "false"}</p>
-        {isAuthenticated ? (
-          <div>
-            <p>{user.name}</p>
-            <p>{user.email}</p>
+      <main className="auth-wrapper">
+        <section className="auth-sections">
+          <div className="row">
+            <div className="col-12 col-lg-5 auth-left">
+              <section className="main-section">
+                <div className="welcome-message">
+                  <Title color="green">
+                    Login / <br /> لاگ ان کریں
+                  </Title>
+                </div>
+                <div className="m-4">
+                  <AuthForm
+                    data={formData}
+                    handleSubmit={handleSubmit}
+                    inputChangeHandler={(e) => inputChangeHandler(e)}
+                    btnText="Login"
+                  />
+                </div>
+                <div className="alternate_method">
+                  <p>
+                    Don't Have an Account ?{" "}
+                    <Link to="/signup">Register Here</Link>
+                  </p>
+                </div>
+              </section>
+            </div>
+            <div className="col-7 auth-login-right"></div>
           </div>
-        ) : (
-          ""
-        )}
-        <button
-          onClick={() =>
-            dispatch(
-              !isAuthenticated ? LOGIN_SUCCESS(usernIfo) : LOGOUT_SUCCESS()
-            )
-          }
-        >
-          {isAuthenticated ? "log out" : "log in"}
-        </button>
-      </div>
+        </section>
+      </main>
     </ContainerLayout>
   );
 }

@@ -8,6 +8,7 @@ import NotFound from "./pages/NotFound/NotFound";
 import FileComplaint from "./pages/FileComplaint/FileComplaint";
 import Login from "./pages/Auth/Login/Login";
 import Signup from "./pages/Auth/Signup/Signup";
+import Profile from "./pages/Auth/Profile/Profile";
 import NarkhnamaPortal from "./pages/NarkhnamaPortal/NarkhnamaPortal";
 import ProtectedUserRoute from "./utils/ProtectedRoute/ProtectedRoute";
 import { useSelector } from "react-redux";
@@ -22,6 +23,14 @@ function App() {
         element={
           <ProtectedUserRoute isAuthenticated={isAuthenticated}>
             <FileComplaint />
+          </ProtectedUserRoute>
+        }
+      />
+      <Route
+        path="/citizen-profile"
+        element={
+          <ProtectedUserRoute isAuthenticated={isAuthenticated}>
+            <Profile />
           </ProtectedUserRoute>
         }
       />

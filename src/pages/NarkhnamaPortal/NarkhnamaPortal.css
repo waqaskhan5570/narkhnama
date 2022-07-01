@@ -1,9 +1,9 @@
 .portal-wrapper {
-  max-width: 100%;
+  width: 100%;
 }
 
 .portal-sections .row {
-  width: 100%;
+  margin: 0px 0px;
 }
 
 .portal-sections .portal-left {
@@ -30,7 +30,7 @@
 }
 
 .portal-sections .portal-right {
-  background: url("../../assets/images/fort.jpg");
+  background: url("../../assets/images/fort.webp");
   height: 100vh;
   background-size: cover;
 }
