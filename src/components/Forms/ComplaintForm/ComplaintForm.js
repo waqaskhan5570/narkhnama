@@ -1,9 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import "./ComplaintForm.css";
 import { Button, Form } from "react-bootstrap";
 
 function ComplaintForm(props) {
   const { handleSubmit, inputChangeHandler } = props;
+  const [count, setCount] = useState("0");
+  const [descCount, setDescCount] = useState("0");
+
+  const onSubjectChange = (e) => {
+    if (e.target.name === "subject") {
+      setCount(e.target.value.length);
+      inputChangeHandler(e);
+    } else if (e.target.name === "description") {
+      setDescCount(e.target.value.length);
+      inputChangeHandler(e);
+    }
+  };
+
   return (
     <div className="complaint-form">
       <Form onSubmit={handleSubmit}>
@@ -14,10 +27,12 @@ function ComplaintForm(props) {
               <Form.Control
                 type="input"
                 placeholder="Complaint Subject"
-                onChange={inputChangeHandler}
+                onChange={(e) => onSubjectChange(e)}
                 required
                 name="subject"
+                maxLength={40}
               />
+              <Form.Text>{count}/40 Characters Left</Form.Text>
             </Form.Group>
           </div>
           <div className="col">
@@ -39,16 +54,18 @@ function ComplaintForm(props) {
             as="textarea"
             rows={4}
             placeholder="Complaint Description"
-            onChange={inputChangeHandler}
+            onChange={(e) => onSubjectChange(e)}
             required
             name="description"
+            maxLength={300}
           />
+          <Form.Text>{descCount}/300 Characters Left</Form.Text>
         </Form.Group>
         <Form.Group className="mb-3" controlId="location">
           <Form.Label>Retailer Location</Form.Label>
           <Form.Control
             type="text"
-            placeholder="Complaint Description"
+            placeholder="Shop  #, Street #, Area , City"
             onChange={inputChangeHandler}
             required
             name="location"

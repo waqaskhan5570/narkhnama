@@ -4,6 +4,7 @@ import Logo from "../../assets/images/NarkhnamaLogo.png";
 import "./NavigationBar.css";
 import { useSelector, useDispatch } from "react-redux";
 import { LOGOUT_SUCCESS } from "../../store/auth";
+import { FaSignOutAlt, FaUserAlt } from "react-icons/fa";
 
 function NavigationBar() {
   const { isAuthenticated } = useSelector((state) => state.auth);
@@ -24,17 +25,25 @@ function NavigationBar() {
               <Nav.Link href="/price-lists">Price List</Nav.Link>
             </Nav>
             <Nav>
-              {isAuthenticated ? (
-                <Button onClick={() => dispatch(LOGOUT_SUCCESS())}>
-                  LOG OUT
-                </Button>
-              ) : null}
+              <Nav.Link href="/citizen-profile">
+                <FaUserAlt />
+              </Nav.Link>
               <Nav.Link
                 href="/file-complaint"
                 className="btn btn-warning text-uppercase "
               >
                 File a Complaint
               </Nav.Link>
+              {isAuthenticated ? (
+                <Nav>
+                  <Button
+                    onClick={() => dispatch(LOGOUT_SUCCESS())}
+                    variant="danger"
+                  >
+                    <FaSignOutAlt />
+                  </Button>
+                </Nav>
+              ) : null}
             </Nav>
           </Navbar.Collapse>
         </Container>

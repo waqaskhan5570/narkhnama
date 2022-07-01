@@ -1,0 +1,36 @@
+.card-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 25px;
+  border-radius: 10px;
+}
+
+.card-icon-container {
+  margin-right: 30px;
+  background-color: #fff;
+  padding: 7px;
+  border-radius: 5px;
+}
+
+.card-text-container > h4 {
+  font-size: 17px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  text-transform: capitalize;
+}
+.card-text-container > p {
+  font-weight: 500;
+}
+
+.card-container.total {
+  background-color: #ffefe3;
+}
+
+.card-container.resolved {
+  background-color: #d1f1ff;
+}
+
+.card-container.pending {
+  background-color: #ffd4ee;
+}

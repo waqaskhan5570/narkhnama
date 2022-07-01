@@ -13,8 +13,6 @@ function FileComplaint() {
     return <Navigate to="/narkhnama-portal" />;
   }
 
-  console.log(isAuthenticated);
-
   const inputChangeHandler = (event) => {
     const { name, value } = event.target;
     setComplaintData((prevState) => {

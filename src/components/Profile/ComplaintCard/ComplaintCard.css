@@ -1,0 +1,31 @@
+.complaint-card {
+  padding: 25px;
+  background-color: rgb(219, 226, 226);
+  border-radius: 10px;
+  min-width: 400px;
+}
+
+.complaint-card .comp-details p {
+  margin-bottom: 1px;
+  font-size: 14px;
+  text-transform: capitalize;
+}
+
+.complaint-card .comp-details p span {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+@media all and (max-width: 300px) {
+  .complaint-card {
+    max-width: 280px;
+    min-width: unset;
+  }
+}
+
+@media all and (max-width: 450px) {
+  .complaint-card {
+    max-width: 350px;
+    min-width: unset;
+  }
+}
