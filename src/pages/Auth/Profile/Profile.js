@@ -1,9 +1,8 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
-import ContainerLayout from "../../../components/Layouts/ContainerLayout/ContainerLayout";
-import Title from "../../../components/Typography/Title/Title";
-import "./Profile.css";
+import ContainerLayout from "../../../components/UI/Layouts/ContainerLayout/ContainerLayout";
+import Title from "../../../components/UI/Typography/Title/Title";
 import ComplaintCountBox from "../../../components/Profile/ComplaintCountBox/ComplaintCountBox";
 import ComplaintList from "../../../components/Profile/ComplaintList/ComplaintList";
 import {

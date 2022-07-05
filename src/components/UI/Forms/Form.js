@@ -1,9 +1,9 @@
 import React from "react";
 import { Form, Button } from "react-bootstrap";
+import PropTypes from "prop-types";
 
 function AuthForm(props) {
   const { data, handleSubmit, inputChangeHandler, btnText } = props;
-  console.log(data.fields);
   return (
     <div>
       <Form onSubmit={handleSubmit}>
@@ -31,5 +31,12 @@ function AuthForm(props) {
     </div>
   );
 }
+
+AuthForm.propTypes = {
+  data: PropTypes.object.isRequired,
+  handleSubmit: PropTypes.func.isRequired,
+  inputChangeHandler: PropTypes.func.isRequired,
+  btnText: PropTypes.string.isRequired,
+};
 
 export default AuthForm;

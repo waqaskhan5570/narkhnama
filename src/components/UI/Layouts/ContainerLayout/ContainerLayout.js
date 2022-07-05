@@ -1,7 +1,7 @@
 import React from "react";
 import "./ContainerLayout.css";
-import NavigationBar from "../../NavigationBar/NavigationBar";
-import Footer from "../../Footer/Footer";
+import NavigationBar from "../../../NavigationBar/NavigationBar";
+import Footer from "../../../Footer/Footer";
 
 function ContainerLayout(props) {
   return (

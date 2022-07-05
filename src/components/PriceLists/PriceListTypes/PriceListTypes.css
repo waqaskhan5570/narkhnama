@@ -1,0 +1,43 @@
+.intro-area {
+  position: relative;
+  text-align: center;
+}
+
+.sub-heading {
+  position: relative;
+  margin-bottom: 75px;
+}
+
+.sub-heading:before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-top: 10px;
+  margin-left: -3%;
+  width: 6%;
+  height: 1px;
+  background: var(--primaryGreen);
+  z-index: 1;
+  -webkit-transition: 0.3s ease;
+  -moz-transition: 0.3s ease;
+  -ms-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+.sub-heading:hover:before {
+  width: 24%;
+  margin-left: -12%;
+}
+.sub-heading:after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-top: 10px;
+  margin-left: -12%;
+  width: 24%;
+  height: 1px;
+  background: #e1e1e1;
+}

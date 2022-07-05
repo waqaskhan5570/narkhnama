@@ -1,6 +1,8 @@
 .main-text {
   margin-top: 10px;
   line-height: 25px;
+  padding: 0px 0px;
+  margin: 0px 0px;
 }
 
 .main-text.green {
@@ -17,4 +19,8 @@
 
 .main-text.center {
   text-align: center;
+}
+
+.main-text.lg {
+  font-size: 24px;
 }

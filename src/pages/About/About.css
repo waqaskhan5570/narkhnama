@@ -1,0 +1,9 @@
+.about_wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.about_wrapper .about-content,
+.about_wrapper .about-image {
+  width: 50%;
+}

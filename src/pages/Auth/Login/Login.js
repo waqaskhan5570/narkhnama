@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import ContainerLayout from "../../../components/Layouts/ContainerLayout/ContainerLayout";
+import ContainerLayout from "../../../components/UI/Layouts/ContainerLayout/ContainerLayout";
 import "../Auth.css";
 import { Navigate, Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import Title from "../../../components/Typography/Title/Title";
+import Title from "../../../components/UI/Typography/Title/Title";
 import { LOGIN_SUCCESS } from "../../../store/auth";
-import AuthForm from "../../../components/Forms/Form";
+import AuthForm from "../../../components/UI/Forms/Form";
 import formData from "../Login/login-data.json";
 
 function Login() {

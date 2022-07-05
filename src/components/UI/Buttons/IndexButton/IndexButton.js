@@ -1,7 +1,8 @@
 import React from "react";
 import "./IndexButton.css";
 import { Link } from "react-router-dom";
-import { FaArrowCircleRight, FaArrowRight } from "react-icons/fa";
+import { FaArrowRight } from "react-icons/fa";
+import PropTypes from "prop-types";
 
 function IndexButton(props) {
   return (
@@ -17,5 +18,9 @@ function IndexButton(props) {
     </div>
   );
 }
+
+IndexButton.propTypes = {
+  link: PropTypes.string.isRequired,
+};
 
 export default IndexButton;

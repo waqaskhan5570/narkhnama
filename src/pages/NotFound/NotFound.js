@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Button } from "react-bootstrap";
-import ContainerLayout from "../../components/Layouts/ContainerLayout/ContainerLayout";
+import ContainerLayout from "../../components/UI/Layouts/ContainerLayout/ContainerLayout";
 import "./NotFound.css";
 
 function NotFound() {

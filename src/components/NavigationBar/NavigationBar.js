@@ -25,16 +25,18 @@ function NavigationBar() {
               <Nav.Link href="/price-lists">Price List</Nav.Link>
             </Nav>
             <Nav>
-              <Nav.Link href="/citizen-profile">
-                <FaUserAlt />
-              </Nav.Link>
+              {isAuthenticated && (
+                <Nav.Link href="/citizen-profile">
+                  <FaUserAlt />
+                </Nav.Link>
+              )}
               <Nav.Link
                 href="/file-complaint"
                 className="btn btn-warning text-uppercase "
               >
                 File a Complaint
               </Nav.Link>
-              {isAuthenticated ? (
+              {isAuthenticated && (
                 <Nav>
                   <Button
                     onClick={() => dispatch(LOGOUT_SUCCESS())}
@@ -43,7 +45,7 @@ function NavigationBar() {
                     <FaSignOutAlt />
                   </Button>
                 </Nav>
-              ) : null}
+              )}
             </Nav>
           </Navbar.Collapse>
         </Container>

@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import ContainerLayout from "../../components/Layouts/ContainerLayout/ContainerLayout";
+import ContainerLayout from "../../components/UI/Layouts/ContainerLayout/ContainerLayout";
 import { useSelector } from "react-redux";
 import { Navigate } from "react-router-dom";
 import "./FileComplaint.css";
-import Title from "../../components/Typography/Title/Title";
-import ComplaintForm from "../../components/Forms/ComplaintForm/ComplaintForm";
+import Title from "../../components/UI/Typography/Title/Title";
+import ComplaintForm from "../../components/UI/Forms/ComplaintForm/ComplaintForm";
 
 function FileComplaint() {
   const { isAuthenticated } = useSelector((state) => state.auth);

@@ -1,9 +1,9 @@
 import React from "react";
-import ContainerLayout from "../../components/Layouts/ContainerLayout/ContainerLayout";
+import ContainerLayout from "../../components/UI/Layouts/ContainerLayout/ContainerLayout";
 import "./Home.css";
-import Title from "../../components/Typography/Title/Title";
-import Text from "../../components/Typography/Text/Text";
-import IndexButton from "../../components/Buttons/IndexButton/IndexButton";
+import Title from "../../components/UI/Typography/Title/Title";
+import Text from "../../components/UI/Typography/Text/Text";
+import IndexButton from "../../components/UI/Buttons/IndexButton/IndexButton";
 import NarkhnamaLogo from "../../assets/images/NarkhnamaLogo.png";
 
 function Home() {

@@ -1,0 +1,91 @@
+.typeCard {
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.intro-block {
+  position: relative;
+  background-image: url("../../../assets/images/vegetables.webp");
+  background-position: center;
+  background-size: cover;
+  margin: 50px 0px 0px;
+  text-align: center;
+  padding: 70px 25px 40px;
+  border-radius: 5px;
+}
+
+.intro-block.fruits {
+  background-image: url("../../../assets/images/fruits.webp");
+}
+
+.intro-block.meat {
+  background-image: url("../../../assets/images/cow.webp");
+}
+
+.intro-block.vegetables {
+  background-image: url("../../../assets/images/vegs.webp");
+}
+
+.intro-block.poultry {
+  background-image: url("../../../assets/images/poultry.webp");
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #a09595;
+  opacity: 0.3;
+  top: 0px;
+  left: 0px;
+}
+
+.intro-block:hover,
+.intro-block.active {
+  background: var(--primaryRed);
+  cursor: pointer;
+}
+
+.intro-block:hover {
+  transition: 0.6s ease;
+  -webkit-transition: 0.6s ease;
+  -moz-transition: 0.6s ease;
+  -o-transition: 0.6s ease;
+  -ms-transition: 0.6s ease;
+}
+
+.intro-block .intro-icon {
+  position: absolute;
+  top: -31px;
+  left: 50%;
+  margin-left: -31px;
+}
+
+.intro-block .fa {
+  width: 63px;
+  height: 63px;
+  font-size: 30px;
+  color: white;
+  line-height: 2;
+  background: deepskyblue;
+  border-radius: 50%;
+  box-shadow: 0px 0px 0px 10px #cceef9;
+}
+
+.intro-block h3 {
+  font-size: 18px;
+  color: #fff;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  z-index: 99;
+}
+
+.intro-block p {
+  color: #505050;
+}
+
+.intro-block:hover h3,
+.intro-block:hover p {
+  color: #f6f6f6;
+}

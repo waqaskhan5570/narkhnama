@@ -1,5 +1,6 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 // pages
 import Home from "../src/pages/Home/Home";
@@ -11,7 +12,9 @@ import Signup from "./pages/Auth/Signup/Signup";
 import Profile from "./pages/Auth/Profile/Profile";
 import NarkhnamaPortal from "./pages/NarkhnamaPortal/NarkhnamaPortal";
 import ProtectedUserRoute from "./utils/ProtectedRoute/ProtectedRoute";
-import { useSelector } from "react-redux";
+import PriceLists from "./pages/PriceLists/PriceLists";
+import SinglePriceList from "./pages/SinglePriceList/SinglePriceList";
+
 function App() {
   const { isAuthenticated, user } = useSelector((state) => state.auth);
   return (
@@ -38,6 +41,8 @@ function App() {
       <Route path="*" element={<NotFound />} />
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
+      <Route path="/price-lists" element={<PriceLists />} />
+      <Route path="/price-lists/:listType" element={<SinglePriceList />} />
     </Routes>
   );
 }
