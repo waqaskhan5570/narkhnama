@@ -1,0 +1,9 @@
+.price_lists_details {
+  background-color: var(--yellow);
+  padding: 10px;
+}
+
+.price_lists_details p {
+  font-size: 22px;
+  font-weight: 700;
+}

@@ -16,8 +16,6 @@ function Topbar() {
         >
           <FaBars />
         </button>
-
-        <h3>Admin Dashboard</h3>
       </div>
     </div>
   );

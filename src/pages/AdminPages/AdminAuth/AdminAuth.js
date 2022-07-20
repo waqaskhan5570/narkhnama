@@ -1,24 +1,23 @@
 import React, { useState } from "react";
-import ContainerLayout from "../../../components/UI/Layouts/ContainerLayout/ContainerLayout";
-import "../Auth.css";
-import { Navigate, Link } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
 import Title from "../../../components/UI/Typography/Title/Title";
-import { LOGIN_SUCCESS, ADMIN_LOGIN_SUCCESS } from "../../../store/auth";
+import ContainerLayout from "../../../components/UI/Layouts/ContainerLayout/ContainerLayout";
 import AuthForm from "../../../components/UI/Forms/Form";
-import formData from "../Login/login-data.json";
+import formData from "../../Auth/Login/login-data.json";
+import { useSelector, useDispatch } from "react-redux";
+import { ADMIN_LOGIN_SUCCESS } from "../../../store/auth";
+import { Navigate } from "react-router-dom";
 
-function Login({ pageFor }) {
+function AdminAuth() {
+  const { isAdminAuthenticated } = useSelector((state) => state.auth);
+  const dispatch = useDispatch();
+
   const [loginData, setLoginData] = useState({
     email_phone: "",
     password: "",
   });
 
-  const { isAuthenticated } = useSelector((state) => state.auth);
-  const dispatch = useDispatch();
-
-  if (isAuthenticated) {
-    return <Navigate to="/file-complaint" />;
+  if (isAdminAuthenticated) {
+    return <Navigate to="/admin-panel/dashboard" />;
   }
 
   const inputChangeHandler = (event) => {
@@ -33,9 +32,8 @@ function Login({ pageFor }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(LOGIN_SUCCESS(loginData));
+    dispatch(ADMIN_LOGIN_SUCCESS(loginData));
   };
-
   return (
     <ContainerLayout>
       <main className="auth-wrapper">
@@ -44,7 +42,7 @@ function Login({ pageFor }) {
             <div className="col-12 col-lg-5 auth-left">
               <section className="main-section">
                 <div className="welcome-message">
-                  <Title color="green">Login / لاگ ان کریں</Title>
+                  <Title color="green">Admin Login</Title>
                 </div>
                 <div className="m-4">
                   <AuthForm
@@ -54,14 +52,6 @@ function Login({ pageFor }) {
                     btnText="Login"
                   />
                 </div>
-                {pageFor !== "admin" && (
-                  <div className="alternate_method">
-                    <p>
-                      Don't Have an Account ?{" "}
-                      <Link to="/signup">Register Here</Link>
-                    </p>
-                  </div>
-                )}
               </section>
             </div>
             <div className="col-7 auth-login-right"></div>
@@ -72,4 +62,4 @@ function Login({ pageFor }) {
   );
 }
 
-export default Login;
+export default AdminAuth;

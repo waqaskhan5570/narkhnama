@@ -12,13 +12,19 @@ import Signup from "./pages/Auth/Signup/Signup";
 import Profile from "./pages/Auth/Profile/Profile";
 import NarkhnamaPortal from "./pages/NarkhnamaPortal/NarkhnamaPortal";
 import ProtectedUserRoute from "./utils/ProtectedRoute/ProtectedRoute";
+import AdminProtectedRoute from "./utils/ProtectedRoute/AdminProtectedRoute";
+
 import PriceLists from "./pages/PriceLists/PriceLists";
 import SinglePriceList from "./pages/SinglePriceList/SinglePriceList";
 // admin pages
+import AdminAuth from "./pages/AdminPages/AdminAuth/AdminAuth";
 import Dashboard from "./pages/AdminPages/Dashboard/Dashboard";
+import AddPriceList from "./pages/AdminPages/AddPriceList/AddPriceList";
 
 function App() {
-  const { isAuthenticated } = useSelector((state) => state.auth);
+  const { isAuthenticated, isAdminAuthenticated } = useSelector(
+    (state) => state.auth
+  );
   return (
     <Routes>
       <Route path="/" element={<Home />} />
@@ -51,12 +57,22 @@ function App() {
       />
 
       {/* admin dashboard routes */}
+      <Route path="/admin-panel/auth" element={<AdminAuth />} />
       <Route
         path="/admin-panel/dashboard"
         element={
-          <ProtectedUserRoute isAuthenticated={isAuthenticated}>
+          <AdminProtectedRoute isAdminAuthenticated={isAdminAuthenticated}>
             <Dashboard />
-          </ProtectedUserRoute>
+          </AdminProtectedRoute>
+        }
+      />
+
+      <Route
+        path="/admin-panel/dashboard"
+        element={
+          <AdminProtectedRoute isAdminAuthenticated={isAdminAuthenticated}>
+            <AddPriceList />
+          </AdminProtectedRoute>
         }
       />
     </Routes>

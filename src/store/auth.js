@@ -8,6 +8,7 @@ export const authSlice = createSlice({
     loginError: false,
     logoutError: false,
     isAuthenticated: false,
+    isAdminAuthenticated: false,
     user: {},
   },
   reducers: {
@@ -16,6 +17,11 @@ export const authSlice = createSlice({
     },
     LOGIN_SUCCESS: (state, action) => {
       state.isAuthenticated = true;
+      state.user = action.payload;
+      state.isLoggingIn = false;
+    },
+    ADMIN_LOGIN_SUCCESS: (state, action) => {
+      state.isAdminAuthenticated = true;
       state.user = action.payload;
       state.isLoggingIn = false;
     },
@@ -29,6 +35,7 @@ export const authSlice = createSlice({
     },
     LOGOUT_SUCCESS: (state) => {
       state.isAuthenticated = false;
+      state.isAdminAuthenticated = false;
       state.isLoggingOut = false;
       state.logoutError = false;
       state.user = null;
@@ -44,6 +51,7 @@ export const authSlice = createSlice({
 export const {
   LOGIN_REQUEST,
   LOGIN_SUCCESS,
+  ADMIN_LOGIN_SUCCESS,
   LOGIN_FAILURE,
   LOGOUT_REQUEST,
   LOGOUT_SUCCESS,

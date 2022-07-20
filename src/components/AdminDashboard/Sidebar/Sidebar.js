@@ -2,18 +2,22 @@ import React, { useRef, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../../assets/images/NarkhnamaLogo.png";
 import {
-  FaColumns,
   FaCopy,
-  FaGlobeAfrica,
+  FaComment,
+  FaTrash,
   FaProjectDiagram,
   FaThLarge,
   FaTimesCircle,
+  FaSignOutAlt,
 } from "react-icons/fa";
 import "./Sidebar.css";
+import { useDispatch } from "react-redux";
+import { LOGOUT_SUCCESS } from "../../../store/auth";
 
 function Sidebar(props) {
   const [isSlider, setIsSlider] = useState(false);
   const sidebarRef = useRef();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     if (window.screen.width < 991) {
@@ -47,9 +51,9 @@ function Sidebar(props) {
         <div className="navigation">
           <div className="navigation-item">
             <Link
-              to="/hero-dashboard"
+              to="/admin-panel/dashboard"
               className={
-                window.location.pathname === "/hero-dashboard"
+                window.location.pathname === "/admin-panel/dashboard"
                   ? "navigation-link active"
                   : "navigation-link"
               }
@@ -62,10 +66,10 @@ function Sidebar(props) {
           </div>
           <div className="navigation-item">
             <Link
-              to="/hero-createcause"
+              to="/admin-panel/add-price-list"
               className={
                 window.location.pathname ===
-                ("/hero-createcause" || "/hero-createenterprise")
+                ("/admin-panel/add-price-list" || "/admin-panel/add-price-list")
                   ? "navigation-link active"
                   : "navigation-link"
               }
@@ -73,15 +77,15 @@ function Sidebar(props) {
               <div className="item-icon">
                 <FaCopy />
               </div>
-              <div className="item-text">Start a Fundraiser</div>
+              <div className="item-text">Add New Price List</div>
             </Link>
           </div>
 
           <div className="navigation-item">
             <Link
-              to="/hero-managecauses"
+              to="/admin-panel/update-price-list"
               className={
-                window.location.pathname === "/hero-managecauses"
+                window.location.pathname === "/admin-panel/update-price-list"
                   ? "navigation-link active"
                   : "navigation-link"
               }
@@ -89,38 +93,54 @@ function Sidebar(props) {
               <div className="item-icon">
                 <FaProjectDiagram />
               </div>
-              <div className="item-text">Manage Causes</div>
+              <div className="item-text">Update a Price List</div>
             </Link>
           </div>
           <div className="navigation-item">
             <Link
-              to="/hero-manageenterprises"
+              to="/admin-panel/delete-price-list"
               className={
-                window.location.pathname === "/hero-manageenterprises"
+                window.location.pathname === "/admin-panel/delete-price-list"
                   ? "navigation-link active"
                   : "navigation-link"
               }
             >
               <div className="item-icon">
-                <FaColumns />
+                <FaTrash />
               </div>
-              <div className="item-text">Manage Enterprises</div>
+              <div className="item-text">Delete Price List</div>
             </Link>
           </div>
           <div className="navigation-item">
             <Link
-              to="/tribe-world"
+              to="/complaints"
               className={
-                window.location.pathname === "/tribe-world"
+                window.location.pathname === "/complaints"
                   ? "navigation-link active"
                   : "navigation-link"
               }
             >
               <div className="item-icon">
-                <FaGlobeAfrica />
+                <FaComment />
               </div>
-              <div className="item-text">Tribe World</div>
+              <div className="item-text">View Complaints</div>
             </Link>
+          </div>
+          <div className="navigation-item">
+            <button
+              to="/complaints"
+              className={
+                window.location.pathname === "/complaints"
+                  ? "logout_button  navigation-link active"
+                  : "logout_button navigation-link"
+              }
+              onClick={() => dispatch(LOGOUT_SUCCESS())}
+            >
+              <div className="item-icon">
+                <FaSignOutAlt />
+              </div>
+              <div className="item-text">Log out</div>
+            </button>
           </div>
         </div>
       </div>
