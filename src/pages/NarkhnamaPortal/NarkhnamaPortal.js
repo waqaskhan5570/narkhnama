@@ -2,10 +2,17 @@ import React from "react";
 import IndexButton from "../../components/UI/Buttons/IndexButton/IndexButton";
 import "./NarkhnamaPortal.css";
 import NarkhnamaLogo from "../../assets/images/NarkhnamaLogo.png";
-import { Link } from "react-router-dom";
 import Title from "../../components/UI/Typography/Title/Title";
+import { useSelector } from "react-redux";
+import { Navigate, Link } from "react-router-dom";
 
 function NarkhnamaPortal() {
+  const { isAuthenticated } = useSelector((state) => state.auth);
+
+  if (isAuthenticated) {
+    return <Navigate to="/file-complaint" />;
+  }
+
   return (
     <main className="portal-wrapper">
       <section className="portal-sections">

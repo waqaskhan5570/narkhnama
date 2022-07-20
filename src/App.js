@@ -14,9 +14,11 @@ import NarkhnamaPortal from "./pages/NarkhnamaPortal/NarkhnamaPortal";
 import ProtectedUserRoute from "./utils/ProtectedRoute/ProtectedRoute";
 import PriceLists from "./pages/PriceLists/PriceLists";
 import SinglePriceList from "./pages/SinglePriceList/SinglePriceList";
+// admin pages
+import Dashboard from "./pages/AdminPages/Dashboard/Dashboard";
 
 function App() {
-  const { isAuthenticated, user } = useSelector((state) => state.auth);
+  const { isAuthenticated } = useSelector((state) => state.auth);
   return (
     <Routes>
       <Route path="/" element={<Home />} />
@@ -43,6 +45,20 @@ function App() {
       <Route path="/signup" element={<Signup />} />
       <Route path="/price-lists" element={<PriceLists />} />
       <Route path="/price-lists/:listType" element={<SinglePriceList />} />
+      <Route
+        path="/price-lists/:listType/:date"
+        element={<SinglePriceList />}
+      />
+
+      {/* admin dashboard routes */}
+      <Route
+        path="/admin-panel/dashboard"
+        element={
+          <ProtectedUserRoute isAuthenticated={isAuthenticated}>
+            <Dashboard />
+          </ProtectedUserRoute>
+        }
+      />
     </Routes>
   );
 }
