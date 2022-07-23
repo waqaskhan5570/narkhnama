@@ -4,17 +4,24 @@ import "../Auth.css";
 import { Navigate, Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import Title from "../../../components/UI/Typography/Title/Title";
-import { LOGIN_SUCCESS, ADMIN_LOGIN_SUCCESS } from "../../../store/auth";
+import {
+  LOGIN_SUCCESS,
+  LOGIN_REQUEST,
+  LOGIN_FAILURE,
+} from "../../../store/auth";
 import AuthForm from "../../../components/UI/Forms/Form";
 import formData from "../Login/login-data.json";
+import axios from "axios";
+import { toast } from "react-toastify";
+import { BACKEND_URL } from "../../../utils/constants";
 
 function Login({ pageFor }) {
   const [loginData, setLoginData] = useState({
-    email_phone: "",
+    email: "",
     password: "",
   });
 
-  const { isAuthenticated } = useSelector((state) => state.auth);
+  const { isAuthenticated, isLoggingIn } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
 
   if (isAuthenticated) {
@@ -31,9 +38,16 @@ function Login({ pageFor }) {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    dispatch(LOGIN_SUCCESS(loginData));
+    try {
+      dispatch(LOGIN_REQUEST());
+      const res = await axios.post(`${BACKEND_URL}/auth/login`, loginData);
+      dispatch(LOGIN_SUCCESS(res.data));
+    } catch (error) {
+      dispatch(LOGIN_FAILURE());
+      toast.error("Invalid Credentials");
+    }
   };
 
   return (
@@ -52,6 +66,7 @@ function Login({ pageFor }) {
                     handleSubmit={handleSubmit}
                     inputChangeHandler={(e) => inputChangeHandler(e)}
                     btnText="Login"
+                    loading={isLoggingIn}
                   />
                 </div>
                 {pageFor !== "admin" && (

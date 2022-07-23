@@ -42,6 +42,7 @@ function Footer() {
                   href="https://pakistan.gov.pk/"
                   target="_blank"
                   className="links"
+                  rel="noreferrer"
                 >
                   Government of Pakistan
                 </a>
@@ -51,6 +52,7 @@ function Footer() {
                   href="https://punjab.gov.pk/"
                   target="_blank"
                   className="links"
+                  rel="noreferrer"
                 >
                   Government of Punjab
                 </a>
@@ -60,6 +62,7 @@ function Footer() {
                   href="https://www.sindh.gov.pk/"
                   target="_blank"
                   className="links"
+                  rel="noreferrer"
                 >
                   Government of Sindh
                 </a>
@@ -69,12 +72,18 @@ function Footer() {
                   href="https://balochistan.gov.pk/"
                   target="_blank"
                   className="links"
+                  rel="noreferrer"
                 >
                   Government of Balochistan
                 </a>
               </p>
               <p>
-                <a href="https://kp.gov.pk/" target="_blank" className="links">
+                <a
+                  href="https://kp.gov.pk/"
+                  target="_blank"
+                  className="links"
+                  rel="noreferrer"
+                >
                   Government of Khyber Pukhtunkhwa
                 </a>
               </p>
@@ -84,12 +93,18 @@ function Footer() {
                   href="https://gilgitbaltistan.gov.pk/"
                   target="_blank"
                   className="links"
+                  rel="noreferrer"
                 >
                   Gilgit Baltistan
                 </a>
               </p>
               <p>
-                <a href="https://ajk.gov.pk/" target="_blank" className="links">
+                <a
+                  href="https://ajk.gov.pk/"
+                  target="_blank"
+                  className="links"
+                  rel="noreferrer"
+                >
                   Azad Kashmir
                 </a>
               </p>
@@ -98,6 +113,7 @@ function Footer() {
                   href="https://citizenportal.gov.pk/"
                   target="_blank"
                   className="links"
+                  rel="noreferrer"
                 >
                   Citizen Portal
                 </a>

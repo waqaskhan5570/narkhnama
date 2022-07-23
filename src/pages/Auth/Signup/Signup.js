@@ -4,13 +4,30 @@ import "../Auth.css";
 import { Navigate, Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import Title from "../../../components/UI/Typography/Title/Title";
-import { LOGIN_SUCCESS } from "../../../store/auth";
+import {
+  LOGIN_SUCCESS,
+  LOGIN_FAILURE,
+  LOGIN_REQUEST,
+} from "../../../store/auth";
 import AuthForm from "../../../components/UI/Forms/Form";
 import formData from "../Signup/signup.json";
+import axios from "axios";
+import { toast } from "react-toastify";
+import { BACKEND_URL } from "../../../utils/constants";
 
 function Signup() {
-  const { isAuthenticated } = useSelector((state) => state.auth);
+  const { isAuthenticated, isLoggingIn } = useSelector((state) => state.auth);
+  const [currentTab, setcurrentTab] = useState(1);
   const dispatch = useDispatch();
+
+  const handleTabChange = (change, e) => {
+    e.preventDefault();
+    if (change === "next") {
+      setcurrentTab(currentTab + 1);
+    } else {
+      setcurrentTab(currentTab - 1);
+    }
+  };
 
   const [registrationData, setRegistrationData] = useState({});
 
@@ -28,10 +45,32 @@ function Signup() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    dispatch(LOGIN_SUCCESS(registrationData));
+    const raw = {
+      name: registrationData.name,
+      email: registrationData.email,
+      phone_number: registrationData.phone_number,
+      password: registrationData.password,
+      // cnic: registrationData.cnic,
+      address: {
+        address: registrationData.address,
+        city: registrationData.city,
+        province: registrationData.province,
+        postal_code: registrationData.postal_code,
+      },
+    };
+    try {
+      dispatch(LOGIN_REQUEST());
+      const res = await axios.post(`${BACKEND_URL}/auth/signup`, raw);
+      dispatch(LOGIN_SUCCESS(res.data));
+    } catch (error) {
+      dispatch(LOGIN_FAILURE());
+      toast.error(error.message);
+    }
   };
+
+  console.log(formData.stepOne["0"]);
 
   return (
     <ContainerLayout>
@@ -46,14 +85,37 @@ function Signup() {
                     سائن اپ
                   </Title>
                 </div>
-                <div className="m-4">
-                  <AuthForm
-                    data={formData}
-                    handleSubmit={handleSubmit}
-                    inputChangeHandler={(e) => inputChangeHandler(e)}
-                    btnText="Register"
-                  />
+                <div className="mt-5">
+                  {currentTab === 1 ? (
+                    <AuthForm
+                      data={formData.stepOne["0"]}
+                      values={registrationData}
+                      handleSubmit={(e) => handleTabChange("next", e)}
+                      inputChangeHandler={(e) => inputChangeHandler(e)}
+                      btnText="Next"
+                      loading={isLoggingIn}
+                    />
+                  ) : currentTab === 2 ? (
+                    <AuthForm
+                      data={formData.stepTwo["0"]}
+                      values={registrationData}
+                      handleSubmit={(e) => handleTabChange("next", e)}
+                      inputChangeHandler={(e) => inputChangeHandler(e)}
+                      btnText="Next"
+                      loading={isLoggingIn}
+                    />
+                  ) : currentTab === 3 ? (
+                    <AuthForm
+                      data={formData.stepThree["0"]}
+                      values={registrationData}
+                      handleSubmit={handleSubmit}
+                      inputChangeHandler={(e) => inputChangeHandler(e)}
+                      btnText="Register"
+                      loading={isLoggingIn}
+                    />
+                  ) : null}
                 </div>
+
                 <div className="alternate_method">
                   <p>
                     Already Have an Account ?{" "}

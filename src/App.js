@@ -1,6 +1,8 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import { useSelector } from "react-redux";
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer } from "react-toastify";
 
 // pages
 import Home from "../src/pages/Home/Home";
@@ -26,56 +28,57 @@ function App() {
     (state) => state.auth
   );
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/about-narkhnama" element={<About />} />
-      <Route
-        path="/file-complaint"
-        element={
-          <ProtectedUserRoute isAuthenticated={isAuthenticated}>
-            <FileComplaint />
-          </ProtectedUserRoute>
-        }
-      />
-      <Route
-        path="/citizen-profile"
-        element={
-          <ProtectedUserRoute isAuthenticated={isAuthenticated}>
-            <Profile />
-          </ProtectedUserRoute>
-        }
-      />
-      <Route path="/narkhnama-portal" element={<NarkhnamaPortal />} />
-      <Route path="*" element={<NotFound />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/signup" element={<Signup />} />
-      <Route path="/price-lists" element={<PriceLists />} />
-      <Route path="/price-lists/:listType" element={<SinglePriceList />} />
-      <Route
-        path="/price-lists/:listType/:date"
-        element={<SinglePriceList />}
-      />
-
-      {/* admin dashboard routes */}
-      <Route path="/admin-panel/auth" element={<AdminAuth />} />
-      <Route
-        path="/admin-panel/dashboard"
-        element={
-          <AdminProtectedRoute isAdminAuthenticated={isAdminAuthenticated}>
-            <Dashboard />
-          </AdminProtectedRoute>
-        }
-      />
-
-      <Route
-        path="/admin-panel/dashboard"
-        element={
-          <AdminProtectedRoute isAdminAuthenticated={isAdminAuthenticated}>
-            <AddPriceList />
-          </AdminProtectedRoute>
-        }
-      />
-    </Routes>
+    <div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about-narkhnama" element={<About />} />
+        <Route
+          path="/file-complaint"
+          element={
+            <ProtectedUserRoute isAuthenticated={isAuthenticated}>
+              <FileComplaint />
+            </ProtectedUserRoute>
+          }
+        />
+        <Route
+          path="/citizen-profile"
+          element={
+            <ProtectedUserRoute isAuthenticated={isAuthenticated}>
+              <Profile />
+            </ProtectedUserRoute>
+          }
+        />
+        <Route path="/narkhnama-portal" element={<NarkhnamaPortal />} />
+        <Route path="*" element={<NotFound />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/price-lists" element={<PriceLists />} />
+        <Route path="/price-lists/:listType" element={<SinglePriceList />} />
+        <Route
+          path="/price-lists/:listType/:date"
+          element={<SinglePriceList />}
+        />
+        {/* admin dashboard routes */}
+        <Route path="/admin-panel/auth" element={<AdminAuth />} />
+        <Route
+          path="/admin-panel/dashboard"
+          element={
+            <AdminProtectedRoute isAdminAuthenticated={isAdminAuthenticated}>
+              <Dashboard />
+            </AdminProtectedRoute>
+          }
+        />
+        <Route
+          path="/admin-panel/dashboard"
+          element={
+            <AdminProtectedRoute isAdminAuthenticated={isAdminAuthenticated}>
+              <AddPriceList />
+            </AdminProtectedRoute>
+          }
+        />
+      </Routes>
+      <ToastContainer position="top-right" />
+    </div>
   );
 }
 

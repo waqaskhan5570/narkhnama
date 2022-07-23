@@ -2,7 +2,7 @@
     "fields" :[
       {
         "id"  :1,
-        "name": "email_phone",
+        "name": "email",
         "label": "Phone Number or Email Address",
         "placeholder" : "Phone Number or Email Address",
         "input_text" : "Your Contact wouldn't be shared with anyone",

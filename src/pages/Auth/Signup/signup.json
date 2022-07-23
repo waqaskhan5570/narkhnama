@@ -1,25 +1,18 @@
 {
-    "fields" :[
-      {
+  "stepOne":[
+    { 
+      "fields" :[
+        {
         "id" :1,
-        "name": "first_name",
-        "label": "First Name",
-        "placeholder" : "Your First Name",
+        "name": "name",
+        "label": "Name",
+        "placeholder" : "Your Name",
         "required": true,
         "element_type": "input",
         "input_type" : "text"
       },
       {
         "id" :2,
-        "name": "last_name",
-        "label": "Last Name",
-        "placeholder" : "Your Last Name",
-        "required": true,
-        "element_type": "input",
-        "input_type" : "text"
-      },
-      {
-        "id" :3,
         "name": "email",
         "label": "Email Address",
         "placeholder" : "Enter Your Email Address",
@@ -28,7 +21,7 @@
         "input_type" : "text"
       },
       {
-        "id" :4,
+        "id" :3,
         "name": "phone_number",
         "label": "Phone Number",
         "placeholder" : "Phone Number ",
@@ -37,7 +30,7 @@
         "input_type" : "number"
       },
       {
-        "id" :5,
+        "id" :4,
         "name": "cnic",
         "label": "CNIC",
         "placeholder" : "14 Digits CNIC Number",
@@ -46,24 +39,75 @@
         "element_type": "input",
         "input_type" : "number",
         "max" :14
-      },
-      {
-        "id" :6,
-        "name": "password",
-        "label": "Password",
-        "required": true,
-        "element_type": "input",
-        "input_type" : "password",
-        "placeholder" : "Enter Your Password"
-      },
-      {
-        "id" :7,
-        "name": "confirm_password",
-        "label": "Confirm Password",
-        "required": true,
-        "element_type": "input",
-        "input_type" : "password",
-        "placeholder" : "Enter the same password again"
       }
-    ]   
+    ]
   }
+  ],
+  "stepTwo":[
+    {
+      "fields":[
+        {
+          "id" :5,
+          "name": "address",
+          "label": "Address",
+          "required": true,
+          "element_type": "input",
+          "input_type" : "text",
+          "placeholder" : "Street #, Area"
+        },
+        {
+          "id" :6,
+          "name": "city",
+          "label": "City",
+          "required": true,
+          "element_type": "input",
+          "input_type" : "text",
+          "placeholder" : "City"
+        },
+        {
+          "id" :7,
+          "name": "province",
+          "label": "Provice",
+          "required": true,
+          "element_type": "input",
+          "input_type" : "text",
+          "placeholder" : "Your provice"
+        },
+        {
+          "id" :8,
+          "name": "postal_code",
+          "label": "Postal Code",
+          "required": true,
+          "element_type": "input",
+          "input_type" : "number",
+          "placeholder" : "Postal Code"
+        }
+      ]
+    }
+  ],
+  "stepThree":[
+    {
+      "fields":[
+        {
+          "id" :9,
+          "name": "password",
+          "label": "Password",
+          "required": true,
+          "element_type": "input",
+          "input_type" : "password",
+          "placeholder" : "Enter Your Password"
+        },
+        {
+          "id" :10,
+          "name": "confirm_password",
+          "label": "Confirm Password",
+          "required": true,
+          "element_type": "input",
+          "input_type" : "password",
+          "placeholder" : "Enter the same password again"
+        }
+      ]
+    }
+  ]   
+
+}

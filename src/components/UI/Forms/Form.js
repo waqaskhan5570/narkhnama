@@ -3,7 +3,7 @@ import { Form, Button } from "react-bootstrap";
 import PropTypes from "prop-types";
 
 function AuthForm(props) {
-  const { data, handleSubmit, inputChangeHandler, btnText } = props;
+  const { data, handleSubmit, inputChangeHandler, btnText, loading } = props;
   return (
     <div>
       <Form onSubmit={handleSubmit}>
@@ -24,7 +24,7 @@ function AuthForm(props) {
           </Form.Group>
         ))}
 
-        <Button variant="warning" type="submit">
+        <Button variant="warning" type="submit" disabled={loading}>
           {btnText}
         </Button>
       </Form>
