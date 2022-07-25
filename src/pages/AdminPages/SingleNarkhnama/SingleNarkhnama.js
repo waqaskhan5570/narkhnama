@@ -29,7 +29,7 @@ function SingleNarkhnama() {
       await axios
         .delete(`${BACKEND_URL}/narkhnamas/${id}`, config)
         .then((res) => {
-          toast.info("Narkhnama Deleted Successfully");
+          toast.success(`Narkhnama ${res.data.type} Deleted Successfully`);
           navigate("/admin-panel/narkhnamas");
         })
         .catch((err) => toast.error(err.response.data));
