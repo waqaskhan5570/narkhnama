@@ -40,9 +40,19 @@ function validateCNIC(cnic) {
   return test;
 }
 
+function validatePhoneNumber(number) {
+  var test = /^\d{11}$/g.test(number);
+  if (!test) {
+    return false;
+  }
+
+  return test;
+}
+
 export {
   generateDefaultCustomUrlFromTitle,
   createDateAndTimeFromISO,
   validateEmail,
   validateCNIC,
+  validatePhoneNumber,
 };

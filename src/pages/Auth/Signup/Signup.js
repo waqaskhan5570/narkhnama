@@ -14,7 +14,7 @@ import formData from "../Signup/signup.json";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { BACKEND_URL } from "../../../utils/constants";
-import { validateCNIC } from "../../../utils/helpers";
+import { validateCNIC, validatePhoneNumber } from "../../../utils/helpers";
 
 function Signup() {
   const { isAuthenticated, isLoggingIn } = useSelector((state) => state.auth);
@@ -30,10 +30,13 @@ function Signup() {
     }
   };
 
-  const cnicValidation = (cnic) => {
+  const cnicValidation = (cnic, number) => {
     const isTrue = validateCNIC(cnic);
+    const inNumTrue = validatePhoneNumber(number);
     if (!isTrue) {
       toast.warning("CNIC must be in xxxxx-xxxxxxx-x Format");
+    } else if (!inNumTrue) {
+      toast.warning("Phone Number must be 11 digits number with no spaces");
     } else {
       return isTrue;
     }
@@ -72,7 +75,7 @@ function Signup() {
       },
     };
 
-    if (cnicValidation(registrationData.cnic)) {
+    if (cnicValidation(registrationData.cnic, registrationData.phone_number)) {
       if (registrationData.password === registrationData.confirm_password) {
         try {
           dispatch(LOGIN_REQUEST());
