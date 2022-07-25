@@ -1,21 +1,29 @@
 import React, { useState } from "react";
 import ContainerLayout from "../../components/UI/Layouts/ContainerLayout/ContainerLayout";
 import { useSelector } from "react-redux";
-import { Navigate } from "react-router-dom";
+import { useNavigate, Navigate } from "react-router-dom";
 import "./FileComplaint.css";
 import Title from "../../components/UI/Typography/Title/Title";
 import ComplaintForm from "../../components/UI/Forms/ComplaintForm/ComplaintForm";
+import { toast } from "react-toastify";
+import { BACKEND_URL } from "../../utils/constants";
+import axios from "axios";
 
 function FileComplaint() {
-  const { isAuthenticated } = useSelector((state) => state.auth);
-  const [complaintData, setComplaintData] = useState({});
+  const { isAuthenticated, user } = useSelector((state) => state.auth);
+  const [data, setData] = useState({
+    status: "pending",
+  });
+  const [loading, setLoading] = useState(false);
+
+  const navigate = useNavigate();
   if (!isAuthenticated) {
     return <Navigate to="/narkhnama-portal" />;
   }
 
   const inputChangeHandler = (event) => {
     const { name, value } = event.target;
-    setComplaintData((prevState) => {
+    setData((prevState) => {
       return {
         ...prevState,
         [name]: value,
@@ -23,9 +31,27 @@ function FileComplaint() {
     });
   };
 
-  const handleSubmit = (e) => {
+  let config = "";
+  if (user) {
+    config = {
+      headers: {
+        Authorization: "Bearer " + user.token,
+      },
+    };
+  }
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert(JSON.stringify(complaintData));
+    try {
+      const res = await axios.post(`${BACKEND_URL}/complaints`, data, config);
+      toast.success("Complaint has been filed");
+      setData({
+        status: "pending",
+      });
+      navigate("/citizen-profile");
+    } catch (error) {
+      toast.error(error.response.data);
+    }
   };
 
   return (
@@ -36,6 +62,8 @@ function FileComplaint() {
           <ComplaintForm
             handleSubmit={handleSubmit}
             inputChangeHandler={inputChangeHandler}
+            values={data}
+            loading={loading}
           />
         </section>
       </div>

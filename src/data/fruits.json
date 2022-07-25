@@ -1,0 +1,284 @@
+{
+  "fruits":[
+    {
+      "id" :1,
+      "name":"banana",
+      "level1":"10",
+      "level2":"8",
+      "level3":"9"
+    },
+    {
+      "id" :2,
+      "name":"Golden apple",
+      "level1":"10",
+      "level2":"8",
+      "level3":"9"
+    },
+    {
+	"id" :3,
+	"name":"langra Mango",
+	"level1":"10",
+	"level2":"8",
+	"level3":"9"
+    },
+    {
+	"id" :4,
+	"name":"Sindhri Mango",
+	"level1":"10",
+	"level2":"8",
+	"level3":"9"
+    },
+    {
+	"id" :5,
+	"name":"Chaunsa Mango",
+	"level1":"10",
+	"level2":"8",
+	"level3":"9"
+    },
+    {
+	"id" :6,
+	"name":"Malva Mango",
+	"level1":"10",
+	"level2":"8",
+	"level3":"9"
+    },
+    {
+	"id" :7,
+	"name":"Cherry",
+	"level1":"10",
+	"level2":"8",
+	"level3":"9"
+    },
+    {
+	"id" :8,
+	"name":"Pakistani Apricot",
+	"level1":"10",
+	"level2":"8",
+	"level3":"9"
+    },
+    {
+	"id" :9,
+	"name":"Afghani Apricot",
+	"level1":"10",
+	"level2":"8",
+	"level3":"9"
+    },
+    {
+	"id" :10,
+	"name":"Fruiter 1",
+	"level1":"10",
+	"level2":"8",
+	"level3":"9"
+    },
+    {
+	"id" :11,
+	"name":"Fruiter 2",
+	"level1":"10",
+	"level2":"8",
+	"level3":"9"
+    },
+    {
+	"id" :12,
+	"name":"Melon",
+	"level1":"10",
+	"level2":"8",
+	"level3":"9"
+    },
+    {
+	"id" :13,
+	"name":"Water Melon",
+	"level1":"10",
+	"level2":"8",
+	"level3":"9"
+    },
+    {
+	"id" :14,
+	"name":"Irani Grapes",
+	"level1":"10",
+	"level2":"8",
+	"level3":"9"
+    },
+    {
+	"id" :15,
+	"name":"Peshawar Pear",
+	"level1":"10",
+	"level2":"8",
+	"level3":"9"
+    },
+    {
+	"id" :16,
+	"name":"China Pear",
+	"level1":"10",
+	"level2":"8",
+	"level3":"9"
+    },
+    {
+	"id" :17,
+	"name":"China Apple",
+	"level1":"10",
+	"level2":"8",
+	"level3":"9"
+    },
+    {
+	"id" :18,
+	"name":"Kabli Apple Number 1",
+	"level1":"10",
+	"level2":"8",
+	"level3":"9"
+    },
+    {
+	"id" :19,
+	"name":"Irani Apple",
+	"level1":"10",
+	"level2":"8",
+	"level3":"9"
+    },
+    {
+	"id" :20,
+	"name":"Dir Malta",
+	"level1":"10",
+	"level2":"8",
+	"level3":"9"
+    },
+    {
+	"id" :21,
+	"name":"Punjabi Malta",
+	"level1":"10",
+	"level2":"8",
+	"level3":"9"
+    },
+    {
+	"id" :22,
+	"name":"Swat Malta",
+	"level1":"10",
+	"level2":"8",
+	"level3":"9"
+    },
+    {
+	"id" :23,
+	"name":"Punjabi Kinow",
+	"level1":"10",
+	"level2":"8",
+	"level3":"9"
+    },
+    {
+	"id" :24,
+	"name":"Kela 1",
+	"level1":"10",
+	"level2":"8",
+	"level3":"9"
+    },
+    {
+	"id" :25,
+	"name":"Kela 2",
+	"level1":"10",
+	"level2":"8",
+	"level3":"9"
+    },
+    {
+	"id" :26,
+	"name":"India Kela",
+	"level1":"10",
+	"level2":"8",
+	"level3":"9"
+    },
+    {
+	"id" :27,
+	"name":"Kohat Guava",
+	"level1":"10",
+	"level2":"8",
+	"level3":"9"
+    },
+    {
+	"id" :28,
+	"name":"Punjabi Guava",
+	"level1":"10",
+	"level2":"8",
+	"level3":"9"
+    },
+    {
+	"id" :29,
+	"name":"maaman",
+	"level1":"10",
+	"level2":"8",
+	"level3":"9"
+    },
+    {
+	"id" :30,
+	"name":"aaro",
+	"level1":"10",
+	"level2":"8",
+	"level3":"9"
+    },
+    {
+	"id" :31,
+	"name":"Aloo chaa Peshawar",
+	"level1":"10",
+	"level2":"8",
+	"level3":"9"
+    },
+    {
+	"id" :32,
+	"name":"Swat Aloo chaa Number 1",
+	"level1":"10",
+	"level2":"8",
+	"level3":"9"
+    },
+    {
+	"id" :33,
+	"name":"Swat Aloo chaa NUmber 2",
+	"level1":"10",
+	"level2":"8",
+	"level3":"9"
+    },
+    {
+	"id" :34,
+	"name":"lookaat",
+	"level1":"10",
+	"level2":"8",
+	"level3":"9"
+    },
+    {
+	"id" :35,
+	"name":"leechi",
+	"level1":"10",
+	"level2":"8",
+	"level3":"9"
+    },
+    {
+	"id" :36,
+	"name":"Amlook",
+	"level1":"10",
+	"level2":"8",
+	"level3":"9"
+    },
+    {
+	"id" :37,
+	"name":"Kabali Garma",
+	"level1":"10",
+	"level2":"8",
+	"level3":"9"
+    },
+    {
+	"id" :38,
+	"name":"Quetta Garma",
+	"level1":"10",
+	"level2":"8",
+	"level3":"9"
+    },
+    {
+	"id" :39,
+	"name":"Kabali Apple Number 2",
+	"level1":"10",
+	"level2":"8",
+	"level3":"9"
+    },
+    {
+	"id" :40,
+	"name":"Anaar",
+	"level1":"10",
+	"level2":"8",
+	"level3":"9"
+    }
+  ]
+}

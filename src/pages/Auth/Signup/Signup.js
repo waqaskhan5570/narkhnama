@@ -14,6 +14,7 @@ import formData from "../Signup/signup.json";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { BACKEND_URL } from "../../../utils/constants";
+import { validateCNIC } from "../../../utils/helpers";
 
 function Signup() {
   const { isAuthenticated, isLoggingIn } = useSelector((state) => state.auth);
@@ -26,6 +27,15 @@ function Signup() {
       setcurrentTab(currentTab + 1);
     } else {
       setcurrentTab(currentTab - 1);
+    }
+  };
+
+  const cnicValidation = (cnic) => {
+    const isTrue = validateCNIC(cnic);
+    if (!isTrue) {
+      toast.warning("CNIC must be in xxxxx-xxxxxxx-x Format");
+    } else {
+      return isTrue;
     }
   };
 
@@ -47,12 +57,13 @@ function Signup() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     const raw = {
       name: registrationData.name,
       email: registrationData.email,
       phone_number: registrationData.phone_number,
       password: registrationData.password,
-      // cnic: registrationData.cnic,
+      cnic: registrationData.cnic,
       address: {
         address: registrationData.address,
         city: registrationData.city,
@@ -60,17 +71,22 @@ function Signup() {
         postal_code: registrationData.postal_code,
       },
     };
-    try {
-      dispatch(LOGIN_REQUEST());
-      const res = await axios.post(`${BACKEND_URL}/auth/signup`, raw);
-      dispatch(LOGIN_SUCCESS(res.data));
-    } catch (error) {
-      dispatch(LOGIN_FAILURE());
-      toast.error(error.message);
+
+    if (cnicValidation(registrationData.cnic)) {
+      if (registrationData.password === registrationData.confirm_password) {
+        try {
+          dispatch(LOGIN_REQUEST());
+          const res = await axios.post(`${BACKEND_URL}/auth/signup`, raw);
+          dispatch(LOGIN_SUCCESS(res.data));
+        } catch (error) {
+          dispatch(LOGIN_FAILURE());
+          toast.error(error.response.data);
+        }
+      } else {
+        toast.error("Passwords Do not match");
+      }
     }
   };
-
-  console.log(formData.stepOne["0"]);
 
   return (
     <ContainerLayout>
@@ -85,6 +101,7 @@ function Signup() {
                     سائن اپ
                   </Title>
                 </div>
+
                 <div className="mt-5">
                   {currentTab === 1 ? (
                     <AuthForm
@@ -103,6 +120,8 @@ function Signup() {
                       inputChangeHandler={(e) => inputChangeHandler(e)}
                       btnText="Next"
                       loading={isLoggingIn}
+                      btnSecond="Prev"
+                      btnSecondClick={(e) => handleTabChange("prev", e)}
                     />
                   ) : currentTab === 3 ? (
                     <AuthForm
@@ -112,6 +131,8 @@ function Signup() {
                       inputChangeHandler={(e) => inputChangeHandler(e)}
                       btnText="Register"
                       loading={isLoggingIn}
+                      btnSecond="Prev"
+                      btnSecondClick={(e) => handleTabChange("prev", e)}
                     />
                   ) : null}
                 </div>

@@ -3,12 +3,12 @@
       {
         "id"  :1,
         "name": "email",
-        "label": "Phone Number or Email Address",
-        "placeholder" : "Phone Number or Email Address",
+        "label": "Email Address",
+        "placeholder" : "Email Address",
         "input_text" : "Your Contact wouldn't be shared with anyone",
         "required": true,
         "element_type": "input",
-        "input_type" : "text"
+        "input_type" : "email"
       },
       {
         "id"  :2,

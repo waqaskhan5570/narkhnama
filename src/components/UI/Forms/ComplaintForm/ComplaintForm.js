@@ -3,7 +3,7 @@ import "./ComplaintForm.css";
 import { Button, Form } from "react-bootstrap";
 
 function ComplaintForm(props) {
-  const { handleSubmit, inputChangeHandler } = props;
+  const { handleSubmit, inputChangeHandler, values, loading } = props;
   const [count, setCount] = useState("0");
   const [descCount, setDescCount] = useState("0");
 
@@ -30,9 +30,10 @@ function ComplaintForm(props) {
                 onChange={(e) => onSubjectChange(e)}
                 required
                 name="subject"
-                maxLength={40}
+                maxLength={50}
+                value={values.subject}
               />
-              <Form.Text>{count}/40 Characters Left</Form.Text>
+              <Form.Text>{count}/50 Characters Left</Form.Text>
             </Form.Group>
           </div>
           <div className="col">
@@ -43,7 +44,7 @@ function ComplaintForm(props) {
                 placeholder="Name of Retailer or Shop"
                 onChange={inputChangeHandler}
                 required
-                name="retailer"
+                name="retailerName"
               />
             </Form.Group>
           </div>
@@ -68,10 +69,10 @@ function ComplaintForm(props) {
             placeholder="Shop  #, Street #, Area , City"
             onChange={inputChangeHandler}
             required
-            name="location"
+            name="retailerAddress"
           />
         </Form.Group>
-        <Button type="submit" variant="warning">
+        <Button type="submit" variant="warning" disabled={loading}>
           File Complaint
         </Button>
       </Form>

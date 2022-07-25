@@ -21,7 +21,10 @@ import SinglePriceList from "./pages/SinglePriceList/SinglePriceList";
 // admin pages
 import AdminAuth from "./pages/AdminPages/AdminAuth/AdminAuth";
 import Dashboard from "./pages/AdminPages/Dashboard/Dashboard";
-import AddPriceList from "./pages/AdminPages/AddPriceList/AddPriceList";
+import Narkhnamas from "./pages/AdminPages/Narkhnamas/Narkhnamas";
+import SingleNarkhnama from "./pages/AdminPages/SingleNarkhnama/SingleNarkhnama";
+import AddNarkhnama from "./pages/AdminPages/AddNarkhnama/AddNarkhnama";
+import EditNarkhnama from "./pages/AdminPages/EditNarkhnama/EditNarkhnama";
 
 function App() {
   const { isAuthenticated, isAdminAuthenticated } = useSelector(
@@ -55,7 +58,7 @@ function App() {
         <Route path="/price-lists" element={<PriceLists />} />
         <Route path="/price-lists/:listType" element={<SinglePriceList />} />
         <Route
-          path="/price-lists/:listType/:date"
+          path="/price-lists/:listType/:id"
           element={<SinglePriceList />}
         />
         {/* admin dashboard routes */}
@@ -69,10 +72,34 @@ function App() {
           }
         />
         <Route
-          path="/admin-panel/dashboard"
+          path="/admin-panel/narkhnamas"
           element={
             <AdminProtectedRoute isAdminAuthenticated={isAdminAuthenticated}>
-              <AddPriceList />
+              <Narkhnamas />
+            </AdminProtectedRoute>
+          }
+        />
+        <Route
+          path="/admin-panel/narkhnamas/:id"
+          element={
+            <AdminProtectedRoute isAdminAuthenticated={isAdminAuthenticated}>
+              <SingleNarkhnama />
+            </AdminProtectedRoute>
+          }
+        />
+        <Route
+          path="/admin-panel/narkhnamas/add-narkhnama"
+          element={
+            <AdminProtectedRoute isAdminAuthenticated={isAdminAuthenticated}>
+              <AddNarkhnama />
+            </AdminProtectedRoute>
+          }
+        />
+        <Route
+          path="/admin-panel/narkhnamas/edit-narkhnama/:id"
+          element={
+            <AdminProtectedRoute isAdminAuthenticated={isAdminAuthenticated}>
+              <EditNarkhnama />
             </AdminProtectedRoute>
           }
         />

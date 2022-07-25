@@ -18,7 +18,7 @@
         "placeholder" : "Enter Your Email Address",
         "required": true,
         "element_type": "input",
-        "input_type" : "text"
+        "input_type" : "email"
       },
       {
         "id" :3,
@@ -33,12 +33,12 @@
         "id" :4,
         "name": "cnic",
         "label": "CNIC",
-        "placeholder" : "14 Digits CNIC Number",
-        "input_text" : "Your Personal Info wouldn't be shared with anyone",
+        "placeholder" : "13 Digits CNIC Number",
+        "input_text" : "Enter your CNIC in format 1XXXX-XXXXXXX-X",
         "required": true,
         "element_type": "input",
-        "input_type" : "number",
-        "max" :14
+        "input_type" : "text",
+        "max" :15
       }
     ]
   }

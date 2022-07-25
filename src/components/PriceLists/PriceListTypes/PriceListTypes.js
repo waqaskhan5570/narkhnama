@@ -3,10 +3,6 @@ import "./PriceListTypes.css";
 import TypeCard from "../TypeCard/TypeCard";
 import Text from "../../UI/Typography/Text/Text";
 import Title from "../../UI/Typography/Title/Title";
-// import Poultry from "../../../assets/images/poultry.webp";
-// import fruits from "../../../assets/images/fruits.webp";
-// import vegs from "../../../assets/images/vegs.webp";
-// import meat from "../../../assets/images/cow.webp";
 
 function PriceListTypes() {
   return (

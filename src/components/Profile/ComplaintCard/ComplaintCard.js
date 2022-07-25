@@ -3,7 +3,7 @@ import { Button } from "react-bootstrap";
 import "./ComplaintCard.css";
 
 function ComplaintCard(props) {
-  const { subject, retailer, location, status } = props;
+  const { subject, retailer, description, location, status } = props;
   return (
     <div className="complaint-card">
       <h4 className="comp-heading">{subject}</h4>
@@ -25,13 +25,7 @@ function ComplaintCard(props) {
       </div>
       <div className="comp-description">
         <h5 className="text-secondary mt-2"> Description</h5>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa magni
-          odit similique eveniet labore eos tenetur, aut voluptas reprehenderit
-          ipsam ipsa incidunt? Officia, eos iste veniam aliquid dicta accusamus
-          illo ratione, sequi, voluptatibus ex nisi qui sint illum tenetur
-          assumenda.
-        </p>
+        <p>{description}</p>
       </div>
     </div>
   );

@@ -17,11 +17,13 @@ export const authSlice = createSlice({
     },
     LOGIN_SUCCESS: (state, action) => {
       state.isAuthenticated = true;
+      state.isAdminAuthenticated = false;
       state.user = action.payload;
       state.isLoggingIn = false;
     },
     ADMIN_LOGIN_SUCCESS: (state, action) => {
       state.isAdminAuthenticated = true;
+      state.isAuthenticated = false;
       state.user = action.payload;
       state.isLoggingIn = false;
     },

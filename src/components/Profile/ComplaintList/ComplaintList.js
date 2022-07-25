@@ -1,33 +1,21 @@
 import React from "react";
 import ComplaintCard from "../ComplaintCard/ComplaintCard";
 
-function ComplaintList() {
+function ComplaintList({ complaints }) {
   return (
     <div className="row">
-      <div className="col mb-3">
-        <ComplaintCard
-          subject="VeryHigh prices stupid"
-          retailer="waqas"
-          location="shop#3, street#4, din bahar, peshawar"
-          status="pending"
-        />
-      </div>
-      <div className="col mb-3">
-        <ComplaintCard
-          subject="VeryHigh prices stupid"
-          retailer="waqas"
-          location="shop#3, street#4, din bahar, peshawar"
-          status="resolved"
-        />
-      </div>
-      <div className="col mb-3">
-        <ComplaintCard
-          subject="VeryHigh prices stupid"
-          retailer="waqas"
-          location="shop#3, street#4, din bahar, peshawar"
-          status="resolved"
-        />
-      </div>
+      {complaints &&
+        complaints.map((complaint) => (
+          <div className="col mb-3">
+            <ComplaintCard
+              subject={complaint.subject}
+              retailer={complaint.retailerName}
+              location={complaint.retailerAddress}
+              description={complaint.description}
+              status={complaint.status}
+            />
+          </div>
+        ))}
     </div>
   );
 }

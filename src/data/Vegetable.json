@@ -1,0 +1,305 @@
+{
+  "vegetable":[
+    {
+      "id" :1,
+      "name":"Red Potato",
+      "level1":"10",
+      "level2":"8",
+      "level3":"9"
+    },
+    {
+      "id" :2,
+      "name":"White Potato",
+      "level1":"10",
+      "level2":"8",
+      "level3":"9"
+    },
+    {
+	"id" :3,
+	"name":"Onion",
+	"level1":"10",
+	"level2":"8",
+	"level3":"9"
+    },
+    {
+	"id" :4,
+	"name":"Iran Tomato",
+	"level1":"10",
+	"level2":"8",
+	"level3":"9"
+    },
+    {
+	"id" :5,
+	"name":"Afghan Tomato",
+	"level1":"10",
+	"level2":"8",
+	"level3":"9"
+    },
+    {
+	"id" :6,
+	"name":"Sweat Potato",
+	"level1":"10",
+	"level2":"8",
+	"level3":"9"
+    },
+    {
+	"id" :7,
+	"name":"Green Chili",
+	"level1":"10",
+	"level2":"8",
+	"level3":"9"
+    },
+    {
+	"id" :8,
+	"name":"Capsicum",
+	"level1":"10",
+	"level2":"8",
+	"level3":"9"
+    },
+    {
+	"id" :9,
+	"name":"Lemon",
+	"level1":"10",
+	"level2":"8",
+	"level3":"9"
+    },
+    {
+	"id" :10,
+	"name":"Eggplant (Gol)",
+	"level1":"10",
+	"level2":"8",
+	"level3":"9"
+    },
+    {
+	"id" :11,
+	"name":"Eggplant (Lamba)",
+	"level1":"10",
+	"level2":"8",
+	"level3":"9"
+    },
+    {
+	"id" :12,
+	"name":"Pakistan Allium",
+	"level1":"10",
+	"level2":"8",
+	"level3":"9"
+    },
+    {
+	"id" :13,
+	"name":"China Allium",
+	"level1":"10",
+	"level2":"8",
+	"level3":"9"
+    },
+    {
+	"id" :14,
+	"name":"Thailand Ginger",
+	"level1":"10",
+	"level2":"8",
+	"level3":"9"
+    },
+    {
+	"id" :15,
+	"name":"China Ginger",
+	"level1":"10",
+	"level2":"8",
+	"level3":"9"
+    },
+    {
+	"id" :16,
+	"name":"Cabbage",
+	"level1":"10",
+	"level2":"8",
+	"level3":"9"
+    },
+    {
+	"id" :17,
+	"name":"Cauliflower",
+	"level1":"10",
+	"level2":"8",
+	"level3":"9"
+    },
+    {
+	"id" :18,
+	"name":"Cucumber",
+	"level1":"10",
+	"level2":"8",
+	"level3":"9"
+    },
+    {
+	"id" :19,
+	"name":"Bitter Gourd",
+	"level1":"10",
+	"level2":"8",
+	"level3":"9"
+    },
+    {
+	"id" :20,
+	"name":"Swat Pea",
+	"level1":"10",
+	"level2":"8",
+	"level3":"9"
+    },
+    {
+	"id" :21,
+	"name":"Punjabi Pea",
+	"level1":"10",
+	"level2":"8",
+	"level3":"9"
+    },
+    {
+	"id" :22,
+	"name":"Carrot",
+	"level1":"10",
+	"level2":"8",
+	"level3":"9"
+    },
+    {
+	"id" :23,
+	"name":"Spinach",
+	"level1":"10",
+	"level2":"8",
+	"level3":"9"
+    },
+    {
+	"id" :24,
+	"name":"Mint",
+	"level1":"10",
+	"level2":"8",
+	"level3":"9"
+    },
+    {
+	"id" :25,
+	"name":"Radish",
+	"level1":"10",
+	"level2":"8",
+	"level3":"9"
+    },
+    {
+	"id" :26,
+	"name":"Coriander",
+	"level1":"10",
+	"level2":"8",
+	"level3":"9"
+    },
+    {
+	"id" :27,
+	"name":"Turnip",
+	"level1":"10",
+	"level2":"8",
+	"level3":"9"
+    },
+    {
+	"id" :28,
+	"name":"Palak",
+	"level1":"10",
+	"level2":"8",
+	"level3":"9"
+    },
+    {
+	"id" :29,
+	"name":"Mulki Tomato",
+	"level1":"10",
+	"level2":"8",
+	"level3":"9"
+    },
+    {
+	"id" :30,
+	"name":"Kaghzi Lemon",
+	"level1":"10",
+	"level2":"8",
+	"level3":"9"
+    },
+    {
+	"id" :31,
+	"name":"Local Lady Finger",
+	"level1":"10",
+	"level2":"8",
+	"level3":"9"
+    },
+    {
+	"id" :32,
+	"name":"Punjabi Lady Finger",
+	"level1":"10",
+	"level2":"8",
+	"level3":"9"
+    },
+    {
+	"id" :33,
+	"name":"Tandey Gol",
+	"level1":"10",
+	"level2":"8",
+	"level3":"9"
+    },
+    {
+	"id" :34,
+	"name":"Tanday Lamba",
+	"level1":"10",
+	"level2":"8",
+	"level3":"9"
+    },
+    {
+	"id" :35,
+	"name":"Desi Gol Tanday",
+	"level1":"10",
+	"level2":"8",
+	"level3":"9"
+    },
+    {
+	"id" :36,
+	"name":"Frashbin",
+	"level1":"10",
+	"level2":"8",
+	"level3":"9"
+   },
+   {
+	"id" :37,
+	"name":"Kulfa Saag",
+	"level1":"10",
+	"level2":"8",
+	"level3":"9"
+   },
+   {
+	"id" :38,
+	"name":"Meethi Saag",
+	"level1":"10",
+	"level2":"8",
+	"level3":"9"
+   },
+   {
+	"id" :39,
+	"name":"Moli Surkh",
+	"level1":"10",
+	"level2":"8",
+	"level3":"9"
+   },
+   {
+	"id" :40,
+	"name":"Moli Safed",
+	"level1":"10",
+	"level2":"8",
+	"level3":"9"
+   },
+   {
+	"id" :41,
+	"name":"Dhaniya",
+	"level1":"10",
+	"level2":"8",
+	"level3":"9"
+   },
+   {
+	"id" :42,
+	"name":"Podhena",
+	"level1":"10",
+	"level2":"8",
+	"level3":"9"
+   },
+   {
+	"id" :43,
+	"name":"Local Pea",
+	"level1":"10",
+	"level2":"8",
+	"level3":"9"
+   }
+  ]
+}

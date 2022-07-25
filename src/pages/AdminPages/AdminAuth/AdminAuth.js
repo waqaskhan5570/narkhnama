@@ -4,15 +4,24 @@ import ContainerLayout from "../../../components/UI/Layouts/ContainerLayout/Cont
 import AuthForm from "../../../components/UI/Forms/Form";
 import formData from "../../Auth/Login/login-data.json";
 import { useSelector, useDispatch } from "react-redux";
-import { ADMIN_LOGIN_SUCCESS } from "../../../store/auth";
+import {
+  ADMIN_LOGIN_SUCCESS,
+  LOGIN_FAILURE,
+  LOGIN_REQUEST,
+} from "../../../store/auth";
 import { Navigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import axios from "axios";
+import { BACKEND_URL } from "../../../utils/constants";
 
 function AdminAuth() {
-  const { isAdminAuthenticated } = useSelector((state) => state.auth);
+  const { isAdminAuthenticated, isLoggingIn } = useSelector(
+    (state) => state.auth
+  );
   const dispatch = useDispatch();
 
   const [loginData, setLoginData] = useState({
-    email_phone: "",
+    email: "",
     password: "",
   });
 
@@ -32,7 +41,25 @@ function AdminAuth() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(ADMIN_LOGIN_SUCCESS(loginData));
+    try {
+      dispatch(LOGIN_REQUEST());
+      axios
+        .post(`${BACKEND_URL}/auth/login`, loginData)
+        .then((res) => {
+          if (res.data.user.role === "admin") {
+            dispatch(ADMIN_LOGIN_SUCCESS(res.data));
+          } else {
+            toast.error("Unauthorized Person, this is for admins only");
+          }
+        })
+        .catch((err) => {
+          toast.error(err.response.data);
+          dispatch(LOGIN_FAILURE());
+        });
+    } catch (err) {
+      toast.error(err.response.data);
+      dispatch(LOGIN_FAILURE());
+    }
   };
   return (
     <ContainerLayout>
@@ -50,6 +77,8 @@ function AdminAuth() {
                     handleSubmit={handleSubmit}
                     inputChangeHandler={(e) => inputChangeHandler(e)}
                     btnText="Login"
+                    values={loginData}
+                    loading={isLoggingIn}
                   />
                 </div>
               </section>

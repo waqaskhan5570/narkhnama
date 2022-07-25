@@ -25,4 +25,24 @@ function createDateAndTimeFromISO(dateTimeInISO, _date, _time, _seconds) {
   }
 }
 
-export { generateDefaultCustomUrlFromTitle, createDateAndTimeFromISO };
+function validateEmail(mail) {
+  if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)) {
+    return true;
+  }
+  return false;
+}
+
+function validateCNIC(cnic) {
+  const test = /^[0-9]{5}-[0-9]{7}-[0-9]$/g.test(cnic);
+  if (!test) {
+    return false;
+  }
+  return test;
+}
+
+export {
+  generateDefaultCustomUrlFromTitle,
+  createDateAndTimeFromISO,
+  validateEmail,
+  validateCNIC,
+};

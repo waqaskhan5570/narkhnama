@@ -4,12 +4,12 @@ import logo from "../../../assets/images/NarkhnamaLogo.png";
 import {
   FaCopy,
   FaComment,
-  FaTrash,
-  FaProjectDiagram,
   FaThLarge,
   FaTimesCircle,
   FaSignOutAlt,
+  FaGlobe,
 } from "react-icons/fa";
+import { MdPostAdd } from "react-icons/md";
 import "./Sidebar.css";
 import { useDispatch } from "react-redux";
 import { LOGOUT_SUCCESS } from "../../../store/auth";
@@ -66,10 +66,9 @@ function Sidebar(props) {
           </div>
           <div className="navigation-item">
             <Link
-              to="/admin-panel/add-price-list"
+              to="/admin-panel/narkhnamas"
               className={
-                window.location.pathname ===
-                ("/admin-panel/add-price-list" || "/admin-panel/add-price-list")
+                window.location.pathname === "/admin-panel/narkhnamas"
                   ? "navigation-link active"
                   : "navigation-link"
               }
@@ -77,45 +76,32 @@ function Sidebar(props) {
               <div className="item-icon">
                 <FaCopy />
               </div>
-              <div className="item-text">Add New Price List</div>
+              <div className="item-text">Narkhnamas</div>
             </Link>
           </div>
 
           <div className="navigation-item">
             <Link
-              to="/admin-panel/update-price-list"
+              to="/admin-panel/narkhnamas/add-narkhnama"
               className={
-                window.location.pathname === "/admin-panel/update-price-list"
+                window.location.pathname ===
+                "/admin-panel/narkhnamas/add-narkhnama"
                   ? "navigation-link active"
                   : "navigation-link"
               }
             >
               <div className="item-icon">
-                <FaProjectDiagram />
+                <MdPostAdd />
               </div>
-              <div className="item-text">Update a Price List</div>
+              <div className="item-text">Add Narkhnama</div>
             </Link>
           </div>
+
           <div className="navigation-item">
             <Link
-              to="/admin-panel/delete-price-list"
+              to="/admin-panel/complaints"
               className={
-                window.location.pathname === "/admin-panel/delete-price-list"
-                  ? "navigation-link active"
-                  : "navigation-link"
-              }
-            >
-              <div className="item-icon">
-                <FaTrash />
-              </div>
-              <div className="item-text">Delete Price List</div>
-            </Link>
-          </div>
-          <div className="navigation-item">
-            <Link
-              to="/complaints"
-              className={
-                window.location.pathname === "/complaints"
+                window.location.pathname === "/admin-panel/complaints"
                   ? "navigation-link active"
                   : "navigation-link"
               }
@@ -123,7 +109,23 @@ function Sidebar(props) {
               <div className="item-icon">
                 <FaComment />
               </div>
-              <div className="item-text">View Complaints</div>
+              <div className="item-text">Complaints</div>
+            </Link>
+          </div>
+
+          <div className="navigation-item">
+            <Link
+              to="/admin-panel/districts"
+              className={
+                window.location.pathname === "/admin-panel/districts"
+                  ? "navigation-link active"
+                  : "navigation-link"
+              }
+            >
+              <div className="item-icon">
+                <FaGlobe />
+              </div>
+              <div className="item-text">Handle Districts</div>
             </Link>
           </div>
           <div className="navigation-item">

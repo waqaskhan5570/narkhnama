@@ -67,6 +67,7 @@ function Login({ pageFor }) {
                     inputChangeHandler={(e) => inputChangeHandler(e)}
                     btnText="Login"
                     loading={isLoggingIn}
+                    values={loginData}
                   />
                 </div>
                 {pageFor !== "admin" && (
