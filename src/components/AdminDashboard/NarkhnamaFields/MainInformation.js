@@ -3,7 +3,6 @@ import { Form } from "react-bootstrap";
 import { TYPES } from "../../../utils/constants";
 
 function MainInformation({ districts, inputs, inputChangeHandler }) {
-  console.log(districts);
   return (
     <div>
       {/* types/category */}
@@ -14,7 +13,7 @@ function MainInformation({ districts, inputs, inputChangeHandler }) {
             Select Category of Narkhnama
           </option>
           {TYPES.map((type, index) => (
-            <option name="type" value={inputs.type} key={index}>
+            <option name="type" value={type} key={index}>
               {type}
             </option>
           ))}

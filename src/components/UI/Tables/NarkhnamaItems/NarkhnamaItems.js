@@ -5,6 +5,7 @@ import Loader from "../../Loader/Loader";
 import Title from "../../Typography/Title/Title";
 
 function NarkhnamaItems({ narkhnama }) {
+  console.log(narkhnama);
   return (
     <div>
       {narkhnama ? (

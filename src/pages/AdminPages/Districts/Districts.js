@@ -27,7 +27,6 @@ function Districts() {
     show: false,
     title: null,
   });
-  const [districtId, setdistrictId] = useState(null);
   const { user } = useSelector((state) => state.auth);
 
   let config = {

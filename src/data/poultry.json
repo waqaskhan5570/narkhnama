@@ -1,0 +1,18 @@
+{
+  "poultry":[
+    {
+	"id" :1,
+	"name":"Farm Hen/kg",
+	"level1":"",
+	"level2":"",
+	"level3":""
+    },
+    {
+	"id" :2,
+	"name":"Eggs/12",
+	"level1":"",
+	"level2":"",
+	"level3":""
+    }
+  ]
+}

@@ -1,281 +1,211 @@
 {
-  "fruits":[
+  "otherItems":[
     {
       "id" :1,
-      "name":"banana",
-      "level1":"10",
-      "level2":"12",
-      "level3":"14"
+      "name":"Wheat",
+      "level1":"",
+      "level2":"",
+      "level3":""
     },
     {
       "id" :2,
-      "name":"Golden apple",
+      "name":"Wheat(Atta)",
       "level1":"",
       "level2":"",
       "level3":""
     },
     {
 	"id" :3,
-	"name":"langra Mango",
+	"name":"Maida",
 	"level1":"",
 	"level2":"",
 	"level3":""
     },
     {
 	"id" :4,
-	"name":"Sindhri Mango",
+	"name":"Suji",
 	"level1":"",
 	"level2":"",
 	"level3":""
     },
     {
 	"id" :5,
-	"name":"Chaunsa Mango",
+	"name":"Miaze Atta",
 	"level1":"",
 	"level2":"",
 	"level3":""
     },
     {
 	"id" :6,
-	"name":"Malva Mango",
+	"name":"Rice Superior",
 	"level1":"",
 	"level2":"",
 	"level3":""
     },
     {
 	"id" :7,
-	"name":"Cherry",
+	"name":"White Gram",
 	"level1":"",
 	"level2":"",
 	"level3":""
     },
     {
 	"id" :8,
-	"name":"Pakistani Apricot",
+	"name":"Black Gram",
 	"level1":"",
 	"level2":"",
 	"level3":""
     },
     {
 	"id" :9,
-	"name":"Afghani Apricot",
+	"name":"Gram Pulses",
 	"level1":"",
 	"level2":"",
 	"level3":""
     },
     {
 	"id" :10,
-	"name":"Fruiter 1",
+	"name":"Mash Daal",
 	"level1":"",
 	"level2":"",
 	"level3":""
     },
     {
 	"id" :11,
-	"name":"Fruiter 2",
+	"name":"Masoor Daal",
 	"level1":"",
 	"level2":"",
 	"level3":""
     },
     {
 	"id" :12,
-	"name":"Melon",
+	"name":"Moong Daal",
 	"level1":"",
 	"level2":"",
 	"level3":""
     },
     {
 	"id" :13,
-	"name":"Water Melon",
+	"name":"Bean",
 	"level1":"",
 	"level2":"",
 	"level3":""
     },
     {
 	"id" :14,
-	"name":"Irani Grapes",
+	"name":"Korkha",
 	"level1":"",
 	"level2":"",
 	"level3":""
     },
     {
 	"id" :15,
-	"name":"Peshawar Pear",
+	"name":"Daal Channa",
 	"level1":"",
 	"level2":"",
 	"level3":""
     },
     {
 	"id" :16,
-	"name":"China Pear",
+	"name":"Bean (SO)",
 	"level1":"",
 	"level2":"",
 	"level3":""
     },
     {
 	"id" :17,
-	"name":"China Apple",
+	"name":"Black Tea",
 	"level1":"",
 	"level2":"",
 	"level3":""
     },
     {
 	"id" :18,
-	"name":"Kabli Apple Number 1",
+	"name":"Green Tea",
 	"level1":"",
 	"level2":"",
 	"level3":""
     },
     {
 	"id" :19,
-	"name":"Irani Apple",
+	"name":"Brazillian Tea",
 	"level1":"",
 	"level2":"",
 	"level3":""
     },
     {
 	"id" :20,
-	"name":"Dir Malta",
+	"name":"Green Tea Dus",
 	"level1":"",
 	"level2":"",
 	"level3":""
     },
     {
 	"id" :21,
-	"name":"Punjabi Malta",
+	"name":"Sugar of market",
 	"level1":"",
 	"level2":"",
 	"level3":""
     },
     {
 	"id" :22,
-	"name":"Swat Malta",
+	"name":"Sugar U/store",
 	"level1":"",
 	"level2":"",
 	"level3":""
     },
     {
 	"id" :23,
-	"name":"Punjabi Kinow",
+	"name":"Curd",
 	"level1":"",
 	"level2":"",
 	"level3":""
     },
     {
 	"id" :24,
-	"name":"Kela 1",
+	"name":"Shaker",
 	"level1":"",
 	"level2":"",
 	"level3":""
     },
     {
 	"id" :25,
-	"name":"Kela 2",
+	"name":"Fresh Milk",
 	"level1":"",
 	"level2":"",
 	"level3":""
     },
     {
 	"id" :26,
-	"name":"India Kela",
+	"name":"Powder Milk",
 	"level1":"",
 	"level2":"",
 	"level3":""
     },
     {
 	"id" :27,
-	"name":"Kohat Guava",
+	"name":"Gur",
 	"level1":"",
 	"level2":"",
 	"level3":""
     },
     {
 	"id" :28,
-	"name":"Punjabi Guava",
+	"name":"Lose Ghee",
 	"level1":"",
 	"level2":"",
 	"level3":""
     },
     {
 	"id" :29,
-	"name":"maaman",
+	"name":"Desi Ghee",
 	"level1":"",
 	"level2":"",
 	"level3":""
     },
     {
 	"id" :30,
-	"name":"aaro",
-	"level1":"",
-	"level2":"",
-	"level3":""
-    },
-    {
-	"id" :31,
-	"name":"Aloo chaa Peshawar",
-	"level1":"",
-	"level2":"",
-	"level3":""
-    },
-    {
-	"id" :32,
-	"name":"Swat Aloo chaa Number 1",
-	"level1":"",
-	"level2":"",
-	"level3":""
-    },
-    {
-	"id" :33,
-	"name":"Swat Aloo chaa NUmber 2",
-	"level1":"",
-	"level2":"",
-	"level3":""
-    },
-    {
-	"id" :34,
-	"name":"lookaat",
-	"level1":"",
-	"level2":"",
-	"level3":""
-    },
-    {
-	"id" :35,
-	"name":"leechi",
-	"level1":"",
-	"level2":"",
-	"level3":""
-    },
-    {
-	"id" :36,
-	"name":"Amlook",
-	"level1":"",
-	"level2":"",
-	"level3":""
-    },
-    {
-	"id" :37,
-	"name":"Kabali Garma",
-	"level1":"",
-	"level2":"",
-	"level3":""
-    },
-    {
-	"id" :38,
-	"name":"Quetta Garma",
-	"level1":"",
-	"level2":"",
-	"level3":""
-    },
-    {
-	"id" :39,
-	"name":"Kabali Apple Number 2",
-	"level1":"",
-	"level2":"",
-	"level3":""
-    },
-    {
-	"id" :40,
-	"name":"Anaar",
+	"name":"Edible oil",
 	"level1":"",
 	"level2":"",
 	"level3":""

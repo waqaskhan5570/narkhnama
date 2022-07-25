@@ -12,19 +12,22 @@ import { createDateAndTimeFromISO } from "../../utils/helpers";
 import Filters from "../../components/UI/Filters/Filters";
 import { FaFilter } from "react-icons/fa";
 import { Card } from "react-bootstrap";
+import Text from "../../components/UI/Typography/Text/Text";
 
 function SinglePriceList() {
   const { listType, id } = useParams();
   const { pathname } = useLocation();
   const [narkhnamas, setNarkhnamas] = useState(null);
-  const [district, setDistrict] = useState("charsadda");
+  const [district, setDistrict] = useState("peshawar");
   const [show, setShow] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const filterHandler = () => {
     setShow(!show);
   };
 
   useEffect(() => {
+    setLoading(true);
     axios
       .get(
         `${BACKEND_URL}/districts/${district}/narkhnamas${
@@ -33,23 +36,29 @@ function SinglePriceList() {
       )
       .then((res) => {
         setNarkhnamas(res.data);
+        setLoading(false);
       })
       .catch((err) => {
         toast.error(err.response.data);
+        setLoading(false);
       });
   }, [id, listType, pathname, district]);
 
   return (
     <ContainerLayout>
-      {narkhnamas ? (
+      {loading ? (
+        <Loader />
+      ) : narkhnamas ? (
         <div className="main-content">
           <div className="text-center">
             <Title color="red">
               Daily <span className="list_type">{listType}</span> Price List
             </Title>
-            <Title color="green" align="center">
-              District: {district}
-            </Title>
+            {id ? null : (
+              <Title color="green" align="center">
+                District: {district}
+              </Title>
+            )}
           </div>
           {id ? null : (
             <button className="filter_btn" onClick={filterHandler}>
@@ -65,7 +74,10 @@ function SinglePriceList() {
               />
             </section>
           ) : (
-            "Not Price List Exists"
+            <Text color="red" align="center">
+              {`Not Price List Exists for ${listType} in district`}{" "}
+              <span className="text-capitalize">{`${district}`}</span>
+            </Text>
           )}
           {id || narkhnamas.count < 2 ? null : (
             <section className="previous_narkhnamas">
@@ -101,9 +113,7 @@ function SinglePriceList() {
             filterHandler={filterHandler}
           />
         </div>
-      ) : (
-        <Loader />
-      )}
+      ) : null}
     </ContainerLayout>
   );
 }
