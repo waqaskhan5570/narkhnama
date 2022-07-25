@@ -25,6 +25,8 @@ import Narkhnamas from "./pages/AdminPages/Narkhnamas/Narkhnamas";
 import SingleNarkhnama from "./pages/AdminPages/SingleNarkhnama/SingleNarkhnama";
 import AddNarkhnama from "./pages/AdminPages/AddNarkhnama/AddNarkhnama";
 import EditNarkhnama from "./pages/AdminPages/EditNarkhnama/EditNarkhnama";
+import Complaints from "./pages/AdminPages/Complaints/Complaints";
+import Districts from "./pages/AdminPages/Districts/Districts";
 
 function App() {
   const { isAuthenticated, isAdminAuthenticated } = useSelector(
@@ -100,6 +102,24 @@ function App() {
           element={
             <AdminProtectedRoute isAdminAuthenticated={isAdminAuthenticated}>
               <EditNarkhnama />
+            </AdminProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/admin-panel/complaints"
+          element={
+            <AdminProtectedRoute isAdminAuthenticated={isAdminAuthenticated}>
+              <Complaints />
+            </AdminProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/admin-panel/districts"
+          element={
+            <AdminProtectedRoute isAdminAuthenticated={isAdminAuthenticated}>
+              <Districts />
             </AdminProtectedRoute>
           }
         />
