@@ -50,6 +50,7 @@ function AdminAuth() {
             dispatch(ADMIN_LOGIN_SUCCESS(res.data));
           } else {
             toast.error("Unauthorized Person, this is for admins only");
+            dispatch(LOGIN_FAILURE());
           }
         })
         .catch((err) => {
