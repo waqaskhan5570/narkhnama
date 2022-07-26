@@ -86,12 +86,14 @@ function Dashboard() {
               <p>Today's Date</p>
               <p className="heading">
                 Last Price List Updated on:{" "}
-                {narkhnama
-                  ? createDateAndTimeFromISO(narkhnama.createdAt, true)
-                  : null}
+                <span className="lastUpdatedDate">
+                  {narkhnama
+                    ? createDateAndTimeFromISO(narkhnama.createdAt, true)
+                    : null}
+                </span>
               </p>
             </div>
-            <p className="date"> {today.toDateString()}</p>
+            <p className="curretDate"> {today.toDateString()}</p>
           </div>
         </div>
         {/* complaints section */}

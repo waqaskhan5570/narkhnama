@@ -7,3 +7,12 @@
   font-size: 22px;
   font-weight: 700;
 }
+
+.curretDate {
+  color: #fff;
+}
+
+.lastUpdatedDate {
+  color: #fff;
+  border-bottom: 1px solid #000;
+}
